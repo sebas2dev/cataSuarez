@@ -41,7 +41,7 @@ export default function ConferencesSection() {
   ];
   return (
     <div className="max-w-[900px] mx-auto px-4 py-4 text-gray-600">
-      <h1 className="text-center text-[#006838] font-extrabold md:text-4xl font-heavy font-futura-pt my-8 ">
+      <h1 className="text-center text-[#006838]  font-extrabold md:text-4xl font-heavy font-futura-pt my-8 ">
         Conferencias
       </h1>
       <p className="font-bold">

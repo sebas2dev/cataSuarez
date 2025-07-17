@@ -211,10 +211,10 @@ const Programas = () => {
     lastScrollY.set(latest);
   });
 
-  const [childData, setChildData] = useState<string>("");
-  const handleChildData = (data: string) => {
-    setChildData(data);
-  };
+  // const [childData, setChildData] = useState<string>("");
+  // const handleChildData = (data: string) => {
+  //   setChildData(data);
+  // };
 
   const mobileAnimationProps = {
     initial: { opacity: 0, y: 20 },
@@ -366,44 +366,6 @@ const Programas = () => {
         <ConferencesSection />
       </div>
 
-      {/* Programs Section */}
-      {/* <section className="py-16 md:py-32"> */}
-      {/* <div className="container mx-auto px-4 md:px-8 max-w-7xl"> */}
-      {/* Curso de Comunicación */}
-      {/* <ProgramCard
-            title="CURSO DE FORMACIÓN VIRTUAL: COMUNICACIÓN EFECTIVA CON ADOLESCENTES"
-            description="Formación virtual de 10 horas para apoyar a los padres, madres y maestros en su labor de acompañar y educar adolescentes de una manera eficaz y tranquila."
-            duration="10 horas de formación"
-            format="Curso Virtual con acompañamiento En Vivo"
-            features={[
-              "Este curso lo realizo 3 veces al año con un acompañamiento semanal En Vivo durante 2 meses",
-              "Acceso a recursos y materiales especializados",
-              "Sesiones prácticas y dinámicas",
-              "Certificado de participación",
-            ]}
-            image={getCloudinaryUrl(
-              "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026927/images/curso-comunicacion-hero.jpg"
-            )}
-            callToAction="Quiero más información"
-          /> */}
-
-      {/* Familias A+ */}
-      {/* <ProgramCard
-            title="PROGRAMA DE PARENTALIDAD POSITIVA: FAMILIAS A+"
-            description="Programa de formación B-learning (presencial y virtual) para enseñar habilidades parentales, disciplina positiva y herramientas básicas para poner en práctica una crianza positiva, amorosa y efectiva a niños y niñas desde los 2 hasta los 10 años."
-            features={[
-              "Metodología mixta: presencial y virtual",
-              "Material didáctico especializado",
-              "Acompañamiento personalizado",
-              "Evaluación de impacto",
-            ]}
-            image={getCloudinaryUrl(
-              "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026949/images/familias-aplus-cards.jpg"
-            )}
-            isReversed={true}
-            callToAction="Quiero más información"
-          />
-        </div> */}
       {/* </section> */}
 
       {/* Call to Action */}

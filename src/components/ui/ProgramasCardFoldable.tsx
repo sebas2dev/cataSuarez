@@ -14,6 +14,7 @@ type CardItemProps = {
   onClick: () => void;
   openindex?: number;
   isOpenIndex?: number | null;
+  buttonText?: string;
 };
 
 export default function ProgramasCardFoldable({
@@ -22,7 +23,8 @@ export default function ProgramasCardFoldable({
   tag,
   comingSoon = false,
   productDescription,
-  productEspecifications,
+  // productEspecifications,
+  // buttonText,
   buttonLink,
   openindex,
   onClick,
@@ -90,13 +92,17 @@ export default function ProgramasCardFoldable({
               transition={{ duration: 0.4 }}
               className="px-4 pb-4"
             >
-              <div className="text-sm text-gray-700">{productDescription}</div>
-              <div className="text-sm text-gray-700">
-                {productEspecifications}
+              <div className="text-sm text-gray-700 bg-gray-200 w-94 h-42">
+                {productDescription}
               </div>
+              <div
+                className=""
+                // dangerouslySetInnerHTML={{ __html: productDescription }}
+              />
 
               <div className="text-sm text-gray-700">{buttonLink}</div>
               <div className="text-sm text-gray-700">{imageUrl}</div>
+              <div>Test</div>
             </motion.div>
           )}
         </AnimatePresence>

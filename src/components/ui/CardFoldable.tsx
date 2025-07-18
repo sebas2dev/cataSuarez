@@ -10,6 +10,7 @@ type CardItemProps = {
   productDescription?: string;
   productEspecifications?: string;
   buttonLink?: string;
+  logoUrl: string;
   onClick: () => void;
   openindex?: number;
   isOpenIndex?: number | null;
@@ -23,6 +24,7 @@ export default function CardFoldable({
   productEspecifications,
   buttonLink,
   openindex,
+  logoUrl,
   onClick,
   isOpenIndex,
 }: CardItemProps) {
@@ -30,6 +32,14 @@ export default function CardFoldable({
     <div className=" relative  font-futura-pt font-book">
       <div className=" mb-[-16px]  w-[300px] rounded-2xl shadow-lg overflow-hidden">
         {/* Etiqueta superior */}
+        <div className="bg-white w-[80px] h-[80px] top-2 left-2 rounded-full z-20 absolute overflow-hidden">
+          <Image
+            src={logoUrl}
+            fill
+            alt="Logo"
+            className="object-contain absolute center"
+          />
+        </div>
 
         {/* Imagen */}
         <div className="relative h-110 w-full rounded-2xl overflow-hidden">

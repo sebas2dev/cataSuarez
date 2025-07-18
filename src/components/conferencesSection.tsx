@@ -66,12 +66,21 @@ export default function ConferencesSection() {
         </li>
       </ol>
       <div className="flex gap-8 my-8">
-        <div className="w-[45%] h-[600px] relative mb-8">
+        <div className="w-[45%]  relative m-8">
           <Image
             src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1752762944/12._Secci%C3%B3n_conferencias_o2lfxe_c_fill_ar_3_4_g_auto_upao4v.jpg"
             fill
             alt={"Conferencia sobre crianzas"}
+            className="rounded-lg shadow-lg "
           />
+          <div className="bg-white w-[80px] h-[80px] top-2 left-2 rounded-full z-10 absolute overflow-hidden">
+            <Image
+              src={getCloudinaryUrl("CataSuarez_j6c6l6")}
+              fill
+              alt="Logo"
+              className="object-contain absolute center"
+            />
+          </div>
         </div>
         <div>
           {conferencesElements.map((conference, index) => (

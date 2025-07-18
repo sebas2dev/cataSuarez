@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import Image from 'next/image';
-import LogoCarousel from './ui/LogoCarousel';
-import { getCloudinaryUrl } from '@/utils/cloudinary';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import LogoCarousel from "./ui/LogoCarousel";
+import { getCloudinaryUrl } from "@/utils/cloudinary";
 
 const SobreMiEducation = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ const SobreMiEducation = () => {
 
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
   // Hero parallax effects
@@ -25,7 +25,7 @@ const SobreMiEducation = () => {
     height: "40vh",
     mobileHeight: "50vh",
     desktopHeight: "60vh",
-    imagePosition: "15% 34%"
+    imagePosition: "15% 34%",
   };
 
   return (
@@ -35,19 +35,19 @@ const SobreMiEducation = () => {
       className="relative w-full bg-[#F8FAF5] pt-8 md:pt-12 overflow-hidden"
     >
       {/* Hero Section - Shorter height */}
-      <motion.div 
+      <motion.div
         ref={heroRef}
         className="relative mb-12"
-        style={{ 
+        style={{
           height: `min(${heroConfig.mobileHeight}, ${heroConfig.desktopHeight})`,
           scale: heroScale,
           y: heroY,
-          opacity: heroOpacity
+          opacity: heroOpacity,
         }}
       >
         <div className="relative w-full h-full">
           <Image
-            src={getCloudinaryUrl('/images/RBS_3576.jpg')}
+            src={getCloudinaryUrl("/images/RBS_3576.jpg")}
             alt="Education Hero"
             fill
             className="object-cover transform -scale-x-100"
@@ -56,9 +56,9 @@ const SobreMiEducation = () => {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
-          
+
           <div className="absolute inset-0 container mx-auto px-4 md:px-6 flex flex-col justify-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -69,10 +69,15 @@ const SobreMiEducation = () => {
                 Formación académica
               </h2>
               <p className="text-xl md:text-2xl font-book font-futura-pt italic text-[#98b475] leading-snug relative pl-8 pr-4 py-4 my-4 border-l-4 border-[#98b475] bg-[#F8FAF5]/10 rounded-r-lg">
-                <span className="absolute -left-0 top-0 text-6xl text-[#98b475]/70 font-serif select-none leading-none">&quot;</span>
-                La educación puede verse como un derecho, un valor, una ciencia y muchas
-                cosas más. Para mí es el arma más poderosa para transformar al mundo.
-                <span className="absolute -right-1 bottom-0 text-6xl text-[#98b475]/70 font-serif select-none leading-none">&quot;</span>
+                <span className="absolute -left-0 top-0 text-6xl text-[#98b475]/70 font-serif select-none leading-none">
+                  &quot;
+                </span>
+                La educación puede verse como un derecho, un valor, una ciencia
+                y muchas cosas más. Para mí es el arma más poderosa para
+                transformar al mundo.
+                <span className="absolute -right-1 bottom-0 text-6xl text-[#98b475]/70 font-serif select-none leading-none">
+                  &quot;
+                </span>
               </p>
             </motion.div>
           </div>
@@ -81,9 +86,8 @@ const SobreMiEducation = () => {
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 md:px-6">
-        
         {/* Unified Main Heading */}
-        <motion.h2 
+        <motion.h2
           className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mb-12 text-center relative inline-block left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +106,6 @@ const SobreMiEducation = () => {
 
         {/* MODIFIED: Changed back to 2 columns on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 lg:gap-8">
-          
           {/* Card 1: UPB */}
           <motion.div
             className="group bg-white rounded-2xl shadow-lg hover:shadow-xl border-l-4 border-[#006838] hover:border-l-[#98b475] h-full flex flex-col transition-all duration-300 ease-out"
@@ -113,9 +116,14 @@ const SobreMiEducation = () => {
             whileHover={{ y: -4 }}
           >
             <div className="p-6 md:p-8 relative flex-grow hover:bg-gray-50/50 transition-colors duration-300 ease-out">
-              <div className="flex items-start mb-4">                       
+              <div className="flex items-start mb-4">
                 <div className="flex-shrink-0 w-20 h-16 md:w-24 md:h-20 flex items-center justify-center mr-4 relative group-hover:scale-105 transition-transform duration-300">
-                  <Image src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026940/images/education/upb-logo.png" alt="Universidad Pontificia Bolivariana Logo" fill className="object-contain" />
+                  <Image
+                    src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026940/images/education/upb-logo.png"
+                    alt="Universidad Pontificia Bolivariana Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <h4 className="text-xl font-bold font-futura-pt text-[#006838] group-hover:text-[#98b475] transition-colors duration-300 self-center">
                   UNIVERSIDAD PONTIFICIA BOLIVARIANA - Colombia
@@ -129,7 +137,7 @@ const SobreMiEducation = () => {
           </motion.div>
 
           {/* Card 2: PDA */}
-          <motion.div 
+          <motion.div
             className="group bg-white rounded-2xl shadow-lg hover:shadow-xl border-l-4 border-[#006838] hover:border-l-[#98b475] h-full flex flex-col transition-all duration-300 ease-out"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,23 +148,32 @@ const SobreMiEducation = () => {
             <div className="p-6 md:p-8 relative flex-grow hover:bg-gray-50/50 transition-colors duration-300 ease-out">
               <div className="flex items-start mb-4">
                 <div className="flex-shrink-0 w-20 h-16 md:w-24 md:h-20 flex items-center justify-center mr-4 relative group-hover:scale-105 transition-transform duration-300">
-                  <Image src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746030040/pda_uqefb6.png" alt="Asociación Americana de Disciplina Positiva Logo" fill className="object-contain" />
+                  <Image
+                    src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026942/images/education/uq-logo.png"
+                    alt="Universidad de Quensland Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <h4 className="text-xl font-bold font-futura-pt text-[#006838] group-hover:text-[#98b475] transition-colors duration-300 self-center">
-                  ASOCIACIÓN AMERICANA DE DISCIPLINA POSITIVA - USA
+                  UNIVERSIDAD DE QUEENSLAND – Australia
                 </h4>
               </div>
+
               <ul className="font-book font-futura-pt text-base text-[#2A2A2A]/80 list-disc pl-5 space-y-1">
-                <li>Educadora en Disciplina Parental Positiva</li>
-                <li>Educadora de Disciplina Positiva en el Aula</li>
-                <li>Educador de Disciplina Positiva para la Primera Infancia</li>
-                <li>Educador de Disciplina Positiva para Organizaciones</li>
+                <li>
+                  Facilitadora del Programa de Parentalidad Positiva grupal
+                </li>
+                <li>
+                  Facilitadora del Programa de Parentalidad Positiva para
+                  Adolescentes
+                </li>
               </ul>
             </div>
           </motion.div>
 
           {/* Card 3: Berkeley/Additional */}
-          <motion.div 
+          <motion.div
             className="group bg-white rounded-2xl shadow-lg hover:shadow-xl border-l-4 border-[#006838] hover:border-l-[#98b475] h-full flex flex-col transition-all duration-300 ease-out"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -167,20 +184,24 @@ const SobreMiEducation = () => {
             <div className="p-6 md:p-8 relative flex-grow hover:bg-gray-50/50 transition-colors duration-300 ease-out">
               <div className="flex items-start mb-4">
                 <div className="flex-shrink-0 w-20 h-16 md:w-24 md:h-20 flex items-center justify-center mr-4 relative group-hover:scale-105 transition-transform duration-300">
-                  <Image src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026934/images/education/berkeley-logo.png" alt="Universidad de Berkeley Logo" fill className="object-contain" />
+                  <Image
+                    src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746030040/pda_uqefb6.png"
+                    alt="Asociación Americana de Disciplina Positiva Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <h4 className="text-xl font-bold font-futura-pt text-[#006838] group-hover:text-[#98b475] transition-colors duration-300 self-center">
-                  The Sciencie of Happiness – Universidad de Berkeley
+                  ASOCIACIÓN AMERICANA DE DISCIPLINA POSITIVA - USA
                 </h4>
               </div>
-              <p className="text-sm font-semibold text-[#006838] mt-4 mb-2">
-                Otras Certificaciones Adicionales:
-              </p>
               <ul className="font-book font-futura-pt text-base text-[#2A2A2A]/80 list-disc pl-5 space-y-1">
-                <li>Consultora de Empoderamiento y Motivación – Lynn Lott</li>
-                <li>Políticas Efectivas de Desarrollo Infantil – BID</li>
-                <li>Psicología Positiva- Institución Europea de Psicología Positiva</li>
-                <li>Diplomado en Prevención Temprana de Comportamientos Agresivos</li>
+                <li>Educadora en Disciplina Positiva para Familias</li>
+                <li>Educadora de Disciplina Positiva en el Aula</li>
+                <li>
+                  Educador de Disciplina Positiva para la Primera Infancia
+                </li>
+                <li>Educador de Disciplina Positiva para Organizaciones</li>
               </ul>
             </div>
           </motion.div>
@@ -196,7 +217,12 @@ const SobreMiEducation = () => {
           >
             <div className="flex-grow hover:bg-[#006838]/5 transition-colors duration-300 ease-out">
               <div className="mb-3 h-16 md:h-20 w-full relative group-hover:scale-105 transition-transform duration-300">
-                <Image src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026938/images/education/nlp-logo.png" alt="Global NLP Training Logo" fill className="object-contain" />
+                <Image
+                  src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1752869808/GLOBAL_NLP1.jpg_y5xy3o.png"
+                  alt="Global NLP Training Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <h4 className="text-xl font-bold font-futura-pt text-[#006838] group-hover:text-[#98b475] transition-colors duration-300 mb-3">
                 GLOBAL NLP TRAINING
@@ -223,18 +249,40 @@ const SobreMiEducation = () => {
           >
             <div className="flex-grow flex flex-col items-center text-center">
               <div className="mb-4 h-16 md:h-20 w-32 md:w-40 relative group-hover:scale-105 transition-transform duration-300">
-                <Image src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026942/images/education/uq-logo.png" alt="Universidad de Queensland Logo" fill className="object-contain" />
+                <Image
+                  src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026934/images/education/berkeley-logo.png"
+                  alt="Universidad de Berkley Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <h4 className="text-xl font-bold font-futura-pt mb-3">
-                UNIVERSIDAD DE QUEENSLAND – Australia
+                Otras Certificaciones
               </h4>
+              {/* <h4 className="text-xl font-bold font-futura-pt mb-3">
+                The Sciencie of Happiness – Universidad de Berkeley
+              </h4> */}
               <ul className="font-book font-futura-pt opacity-90 list-disc space-y-1 inline-block text-left">
-                <li>Facilitadora del Programa de Parentalidad Positiva grupal</li>
-                <li>Facilitadora del Programa de Parentalidad Positiva para Adolescentes</li>
+                <li>
+                  Diplomado en Prevención Temprana de Comportamientos Agresivos
+                  - Universidad de Antioquia
+                </li>
+                <li>Consultora en Empoderamiento y Motivación - Lynn Lott</li>
+                <li>
+                  Certificada en Políticas Efectivas de Desarrollo Infantil –
+                  BID
+                </li>
+                <li>
+                  Experta en Psicología Positiva – Institución Europea de
+                  Psicología Positiva
+                </li>
+                <li>
+                  Certificada en The Science of Happiness - Universidad de
+                  Berkeley
+                </li>
               </ul>
             </div>
           </motion.div>
-
         </div>
       </div>
 
@@ -246,4 +294,4 @@ const SobreMiEducation = () => {
   );
 };
 
-export default SobreMiEducation; 
+export default SobreMiEducation;

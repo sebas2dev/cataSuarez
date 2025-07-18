@@ -35,6 +35,7 @@ export default function ProgramsPresencialProducts() {
       buttonLinkTeachers:
         "https://www.icloud.com/attachment/?u=https%3A%2F%2Fcvws.icloud-content.com%2FB%2FAXsFducCt1WRAL3rk-D1L3Eqw1N0AeViJfnglHmhM6G2gUakWXDX6RzN%2F%24%7Bf%7D%3Fo%3DAk50GtKlUfRekXLELoN9gAWyt79nqPRZh2H6UDtHKB6b%26v%3D1%26x%3D3%26a%3DCAogQPuVLsz1HUgGDP_dilwvSBvMnA8BOY03yMMoH35WK1gSdhCKjLq-8TIYipy1kvsyIgEAKgkC6AMA_2ibg6lSBCrDU3RaBNfpHM1qJfo8l6xkIdUhcs64burq3YJa7QMtZ7LHn1km703-afCf8k65KR1yJYsNzg2ZsN1rjiDWDe9F1cD04B7NepduEPyW3gBdH1Zga_v_AZE%26e%3D1751043100%26fl%3D%26r%3D057065C3-EEA3-4EB7-A53E-2FA7AFAFBB67-1%26k%3D%24%7Buk%7D%26ckc%3Dcom.apple.largeattachment%26ckz%3D5A2ED198-2E4B-4D52-AC70-1CBB341A4E01%26p%3D52%26s%3DfsXhs2f_iiIcDy7kTnsgMKK-DX8&uk=4ysXgP-FxWsLcGK_5CLaBw&f=Portafolio%20Familias%20A%2B%20instituciones.pdf&sz=15961019",
       openindex: 0,
+      logoUrl: `${getCloudinaryUrl("35._logo_familias_A_wffnwf")}`,
     },
     {
       title: "PROGRAMA MAESTROS PARA LA VIDA ",
@@ -49,6 +50,7 @@ export default function ProgramsPresencialProducts() {
       buttonText: "",
       buttonLink: "/contacto",
       openindex: 1,
+      logoUrl: `${getCloudinaryUrl("29._Logo_maestros_para_la_vida_1_objcok")}`,
     },
   ];
 
@@ -84,6 +86,10 @@ export default function ProgramsPresencialProducts() {
             openindex={card.openindex}
             onClick={() => handleCardClick(index)}
             isOpenIndex={openIndex}
+            productDescription={card.productDescription}
+            productEspecifications={card.productEspecifications}
+            buttonLink={card.buttonLink}
+            logoUrl={card.logoUrl}
           />
         ))}
       </div>
@@ -102,6 +108,7 @@ export default function ProgramsPresencialProducts() {
               <h2 className="uppercase text-center text-2xl mb-6">
                 {card.title}
               </h2>
+
               <div
                 className="whitespace-pre-line  "
                 dangerouslySetInnerHTML={{ __html: card.productDescription }}
@@ -136,7 +143,7 @@ export default function ProgramsPresencialProducts() {
                   </div>
                 </div>
 
-                <div className="w-[40%] center">
+                <div className="w-[40%] center relative">
                   <Image
                     src={card.imageUrl}
                     height={180}
@@ -144,6 +151,14 @@ export default function ProgramsPresencialProducts() {
                     alt={card.title}
                     className="rounded-lg shadow-lg"
                   />
+                  <div className="bg-white w-[80px] h-[80px] bottom-2 left-2 rounded-full z-50 absolute overflow-hidden">
+                    <Image
+                      src={card.logoUrl}
+                      fill
+                      alt="Logo"
+                      className="object-contain absolute center"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>

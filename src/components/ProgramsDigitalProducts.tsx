@@ -42,7 +42,7 @@ export default function PruebasPage() {
     {
       tag: "Libros Digitales",
       title: "HERRAMIENTAS PRÁCTICAS DE CRIANZA PARA…",
-      imageUrl: `${getCloudinaryUrl("libros_digitales")}`,
+      imageUrl: `${getCloudinaryUrl("2._Ebooks_lixkvh")}`,
       comingSoon: false,
       productDescription: `
       <p>Una colección de 4 libros pensada para madres, padres y cuidadores que quieren 
@@ -123,6 +123,10 @@ export default function PruebasPage() {
             openindex={card.openindex}
             onClick={() => handleCardClick(index)}
             isOpenIndex={openIndex}
+            productDescription={card.productDescription}
+            productEspecifications={card.productEspecifications}
+            buttonLink={card.buttonLink}
+            buttonText={card.buttonText}
           />
         ))}
       </div>

@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion, useScroll, useTransform, useMotionValueEvent, useSpring } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { getCloudinaryUrl } from '@/utils/cloudinary';
+import Image from "next/image";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+  useSpring,
+} from "framer-motion";
+import { useEffect, useState } from "react";
+import { getCloudinaryUrl } from "@/utils/cloudinary";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -14,7 +20,7 @@ const Hero = () => {
 
   // Detect touch device
   useEffect(() => {
-    setIsTouch('ontouchstart' in window);
+    setIsTouch("ontouchstart" in window);
   }, []);
 
   // Track scroll for mobile-specific animations
@@ -25,16 +31,16 @@ const Hero = () => {
   const mobileAnimationProps = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { 
+    transition: {
       type: "spring",
       stiffness: 100,
       damping: 20,
-      mass: 0.5
-    }
+      mass: 0.5,
+    },
   };
 
   return (
-    <motion.section 
+    <motion.section
       className="relative min-h-screen w-full overflow-hidden"
       style={{ opacity }}
       initial={{ opacity: 0 }}
@@ -42,17 +48,17 @@ const Hero = () => {
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       {/* Background Image with Mobile Parallax */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          scale: isTouch ? mobileScale : undefined
+          scale: isTouch ? mobileScale : undefined,
         }}
       >
         <Image
-          src={getCloudinaryUrl('/images/hero/hero-image.png')}
+          src={getCloudinaryUrl("/images/hero/hero-image.png")}
           alt="Cata Suárez"
           fill
           className="object-cover object-[70%_35%] md:object-[center_35%]"
@@ -65,56 +71,65 @@ const Hero = () => {
       {/* Content Container with Touch-friendly Animations */}
       <div className="relative container mx-auto h-screen flex items-center px-6 md:px-0">
         <div className="text-white max-w-xl md:pl-[8%]">
-          <motion.h2 
-            {...(isTouch ? mobileAnimationProps : {
-              initial: { opacity: 0, y: 20 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 1, delay: 0.4, ease: "easeOut" }
-            })}
-            className="text-lg md:text-xl font-book font-futura-pt mb-3 md:mb-4 text-[#98b475]"
+          <motion.h2
+            {...(isTouch
+              ? mobileAnimationProps
+              : {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 1, delay: 0.4, ease: "easeOut" },
+                })}
+            className="text-lg md:mt-12 md:text-xl font-book font-futura-pt mb-3 md:mb-4 text-[#98b475]"
           >
             Crianza y Educación Positiva
           </motion.h2>
-          
-          <motion.h1 
-            {...(isTouch ? {
-              ...mobileAnimationProps,
-              transition: {
-                ...mobileAnimationProps.transition,
-                delay: 0.2
-              }
-            } : {
-              initial: { opacity: 0, y: 20 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 1, delay: 0.6, ease: "easeOut" }
-            })}
+
+          <motion.h1
+            {...(isTouch
+              ? {
+                  ...mobileAnimationProps,
+                  transition: {
+                    ...mobileAnimationProps.transition,
+                    delay: 0.2,
+                  },
+                }
+              : {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 1, delay: 0.6, ease: "easeOut" },
+                })}
             className="text-5xl md:text-7xl font-heavy font-futura-pt mb-4 md:mb-6 leading-tight"
           >
             <span className="text-white">CATA</span>
             <br />
             <span className="text-[#98b475]">SUÁREZ</span>
           </motion.h1>
-          
-          <motion.p 
-            {...(isTouch ? {
-              ...mobileAnimationProps,
-              transition: {
-                ...mobileAnimationProps.transition,
-                delay: 0.4
-              }
-            } : {
-              initial: { opacity: 0, y: 20 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 1, delay: 0.8, ease: "easeOut" }
-            })}
+
+          <motion.p
+            {...(isTouch
+              ? {
+                  ...mobileAnimationProps,
+                  transition: {
+                    ...mobileAnimationProps.transition,
+                    delay: 0.4,
+                  },
+                }
+              : {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 1, delay: 0.8, ease: "easeOut" },
+                })}
             className="text-base md:text-lg font-book font-futura-pt leading-relaxed text-white/90 max-w-[90%] md:max-w-full mb-8"
           >
-            <span className="text-[#98b475] font-semibold">El punto de partida de un educador 
-            exitoso comienza consigo mismo.</span>{' '}
-            Quiero mostrarte diferentes <strong>caminos</strong> y guiarte para que te conviertas en un{' '}
-            <strong>padre</strong>, <strong>madre</strong>, <strong>cuidador</strong> o{' '}
-            <strong>maestro</strong> realmente <span className="text-[#98b475] font-semibold">transformador</span>.
-            Aquel que <strong>conecta</strong>, <strong>inspira</strong> y deja{' '}
+            <span className="text-[#98b475] font-semibold">
+              El punto de partida de un educador exitoso comienza consigo mismo.
+            </span>{" "}
+            Quiero mostrarte diferentes <strong>caminos</strong> y guiarte para
+            que te conviertas en un <strong>padre</strong>,{" "}
+            <strong>madre</strong>, <strong>cuidador</strong> o{" "}
+            <strong>maestro</strong> realmente{" "}
+            <span className="text-[#98b475] font-semibold">transformador</span>.
+            Aquel que <strong>conecta</strong>, <strong>inspira</strong> y deja{" "}
             <strong>huellas profundas</strong> en sus hijos y estudiantes.
           </motion.p>
         </div>
@@ -170,4 +185,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

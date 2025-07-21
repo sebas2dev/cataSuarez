@@ -95,9 +95,25 @@ export default function PruebasPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book   ">
       <div className="md-max-w-[900px] max-w-[90vw] mx-auto text-gray-600 ">
-        <h1 className="text-center mt-16 mb-4 text-[#006838] font-extrabold md:text-4xl text-3xl font-heavy font-futura-pt">
+        <motion.h2
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           Productos digitales
-        </h1>
+          <motion.div
+            className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+        </motion.h2>
+        {/* <h1 className="text-center mt-16 mb-4 text-[#006838] font-extrabold md:text-4xl text-3xl font-heavy font-futura-pt">
+          Productos digitales
+        </h1> */}
         <p className="text-center">
           Si eres padre, madre, cuidador, maestro o lideras una institucion
           educativa...
@@ -141,7 +157,7 @@ export default function PruebasPage() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="uppercase text-center text-2xl mb-6">
+              <h2 className="uppercase text-center text-2xl mb-6  md:text-4xl text-3xl">
                 {card.title}
               </h2>
               <div

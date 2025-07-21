@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AsideElements from "./ui/AsideElements";
 import { getCloudinaryUrl } from "@/utils/cloudinary";
+import { motion } from "framer-motion";
 
 export default function ConferencesSection() {
   const conferencesElements = [
@@ -41,9 +42,25 @@ export default function ConferencesSection() {
   ];
   return (
     <div className="max-w-[900px] mx-auto px-4 py-4 text-gray-600">
-      <h1 className="text-center text-[#006838]  font-extrabold md:text-4xl font-heavy font-futura-pt my-8 ">
+      <motion.h2
+        className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] my-16 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         Conferencias
-      </h1>
+        <motion.div
+          className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.5 }}
+        />
+      </motion.h2>
+      {/* <h1 className="text-center text-[#006838]  font-extrabold md:text-4xl text-3xl font-heavy font-futura-pt my-8 ">
+        Conferencias
+      </h1> */}
       <p className="font-bold">
         Ofrezco conferencias presenciales y virtuales sobre crianza
         parentalidad, educación y disciplina positiva dirigidas a:
@@ -65,8 +82,8 @@ export default function ConferencesSection() {
           factores de estrés y aumentando su rendimiento individual y grupal.
         </li>
       </ol>
-      <div className="flex gap-8 my-8">
-        <div className="w-[45%]  relative m-8">
+      <div className="flex flex-col md:flex-row gap-8 my-8">
+        <div className=" w-[80%] h-80  md:h-auto md:w-[45%] relative m-8">
           <Image
             src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1752762944/12._Secci%C3%B3n_conferencias_o2lfxe_c_fill_ar_3_4_g_auto_upao4v.jpg"
             fill

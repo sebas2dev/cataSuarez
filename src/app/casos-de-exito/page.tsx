@@ -1,15 +1,28 @@
-'use client';
+"use client";
 
-import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import VideoEmbed from '@/components/ui/VideoEmbed';
-import EnhancedSocialCard from '@/components/ui/EnhancedSocialCard';
-import RotatingCircles from '@/components/ui/RotatingCircles';
-import { getCloudinaryUrl } from '@/utils/cloudinary';
-import { AnimatePresence } from 'framer-motion';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValueEvent,
+} from "framer-motion";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import VideoEmbed from "@/components/ui/VideoEmbed";
+import EnhancedSocialCard from "@/components/ui/EnhancedSocialCard";
+import RotatingCircles from "@/components/ui/RotatingCircles";
+import { getCloudinaryUrl } from "@/utils/cloudinary";
+import { AnimatePresence } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
+import { FC } from "react";
+
+interface AnimatedButtonProps {
+  href: string;
+  text: string;
+}
 
 const HighlightedQuote = ({ children }: { children: React.ReactNode }) => (
   <motion.div
@@ -20,7 +33,7 @@ const HighlightedQuote = ({ children }: { children: React.ReactNode }) => (
     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
   >
     <div className="bg-[#80b0ab] text-white p-8 md:p-12 rounded-lg shadow-2xl transform -rotate-1 overflow-hidden">
-      <motion.div 
+      <motion.div
         className="transform rotate-1"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -32,7 +45,7 @@ const HighlightedQuote = ({ children }: { children: React.ReactNode }) => (
         </p>
       </motion.div>
     </div>
-    <motion.div 
+    <motion.div
       className="absolute inset-0 bg-white/10 blur-xl -z-10 transform rotate-3"
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -50,7 +63,7 @@ const MainQuote = ({ children }: { children: React.ReactNode }) => (
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
   >
-    <motion.div 
+    <motion.div
       className="absolute -inset-2 md:-inset-4 bg-[#80b0ab]/10 blur-xl -z-10"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -58,8 +71,8 @@ const MainQuote = ({ children }: { children: React.ReactNode }) => (
       transition={{ duration: 1.5, delay: 0.2 }}
     />
     <div className="relative bg-white/90 backdrop-blur-sm border-l-4 md:border-l-8 border-[#80b0ab] p-6 md:p-12 rounded-r-xl md:rounded-r-3xl shadow-2xl overflow-hidden">
-      <motion.p 
-        className="text-xl md:text-3xl font-book font-futura-pt text-[#80b0ab] leading-relaxed text-center"
+      <motion.p
+        className="text-xl md:text-2xl font-book font-futura-pt text-[#80b0ab] leading-relaxed text-center"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -70,7 +83,31 @@ const MainQuote = ({ children }: { children: React.ReactNode }) => (
     </div>
   </motion.div>
 );
-
+const AnimatedButton: FC<AnimatedButtonProps> = ({ href, text }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    animate={{
+      scale: [1, 1.05, 1],
+      y: [0, -4, 0],
+      transition: {
+        duration: 2.5,
+        repeat: Infinity,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    }}
+  >
+    <Link
+      href={href}
+      className="inline-block bg-[#006838] text-white px-6 md:px-8 py-3 rounded-full hover:bg-white hover:text-[#006838] transition-all duration-300 border-2 border-[#006838] hover:-translate-y-1 shadow-[0_4px_12px_rgba(0,104,56,0.15)] hover:shadow-[0_6px_20px_rgba(0,104,56,0.25)] text-sm md:text-base"
+    >
+      {text}
+    </Link>
+  </motion.div>
+);
 interface ProgramCardProps {
   title: string;
   description: string;
@@ -87,16 +124,16 @@ interface ProgramCardProps {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ProgramCard = ({ 
-  title, 
-  description, 
-  images, 
-  quote, 
+const ProgramCard = ({
+  title,
+  description,
+  images,
+  quote,
   details,
   logo,
   videoId,
   socialLinks,
-  websiteUrl
+  websiteUrl,
 }: ProgramCardProps) => (
   <motion.div
     className="bg-white rounded-lg overflow-hidden mb-16 md:mb-32 relative shadow-lg"
@@ -107,27 +144,30 @@ const ProgramCard = ({
   >
     {/* Decorative Circles */}
     <RotatingCircles className="opacity-10 md:opacity-30 -right-16 md:-right-32 -top-16 md:-top-32 scale-50 md:scale-75" />
-    <RotatingCircles className="opacity-10 md:opacity-30 -left-16 md:-left-32 -bottom-16 md:-bottom-32 scale-50 md:scale-75" color="#80b0ab" />
+    <RotatingCircles
+      className="opacity-10 md:opacity-30 -left-16 md:-left-32 -bottom-16 md:-bottom-32 scale-50 md:scale-75"
+      color="#80b0ab"
+    />
 
     <div className="relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 p-6 md:p-8">
         <div className="space-y-4 md:space-y-6 order-2 md:order-1">
           {logo && (
-            <motion.div 
+            <motion.div
               className={`relative w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 md:mb-6 ${
-                logo.includes('maestros-vida-logo') 
-                  ? '' 
-                  : logo.includes('cosmo-logo')
-                    ? 'rounded-full bg-white p-2 shadow-lg overflow-hidden'
-                    : 'rounded-full bg-white/80 p-4 shadow-lg overflow-hidden'
+                logo.includes("maestros-vida-logo")
+                  ? ""
+                  : logo.includes("cosmo-logo")
+                  ? "rounded-full bg-white p-2 shadow-lg overflow-hidden"
+                  : "rounded-full bg-white/80 p-4 shadow-lg overflow-hidden"
               }`}
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
             >
               <Image
@@ -135,11 +175,11 @@ const ProgramCard = ({
                 alt={title}
                 fill
                 className={`object-contain ${
-                  logo.includes('maestros-vida-logo') 
-                    ? '' 
-                    : logo.includes('cosmo-logo')
-                      ? 'scale-150 p-1'
-                      : 'p-2'
+                  logo.includes("maestros-vida-logo")
+                    ? ""
+                    : logo.includes("cosmo-logo")
+                    ? "scale-150 p-1"
+                    : "p-2"
                 }`}
               />
             </motion.div>
@@ -156,7 +196,7 @@ const ProgramCard = ({
             </p>
           )}
           {(socialLinks || websiteUrl) && (
-            <motion.div 
+            <motion.div
               className="mt-4 md:mt-8 space-y-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -210,10 +250,10 @@ const ProgramCard = ({
           ) : (
             <div className="flex flex-col space-y-4">
               {images.map((image, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="relative w-full overflow-hidden rounded-lg shadow-md"
-                  style={{ aspectRatio: '16/9' }}
+                  style={{ aspectRatio: "16/9" }}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -258,10 +298,14 @@ const GridProgramCard: React.FC<GridProgramCardProps> = ({
   description,
   details,
   socialLinks,
-  websiteUrl
+  websiteUrl,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const hasExpandableContent = !!details || !!socialLinks?.facebook || !!socialLinks?.instagram || !!websiteUrl;
+  const hasExpandableContent =
+    !!details ||
+    !!socialLinks?.facebook ||
+    !!socialLinks?.instagram ||
+    !!websiteUrl;
 
   return (
     <motion.div
@@ -284,14 +328,22 @@ const GridProgramCard: React.FC<GridProgramCardProps> = ({
               src={logo}
               alt={`${title} Logo`}
               fill
-              className={`object-contain ${logo.includes('cosmo-logo') ? 'transform scale-150' : ''}`.trim()}
+              className={`object-contain ${
+                logo.includes("cosmo-logo") ? "transform scale-150" : ""
+              }`.trim()}
             />
           </motion.div>
         )}
-        <motion.h4 layout="position" className="text-lg md:text-xl font-heavy font-futura-pt text-[#80b0ab] group-hover:text-[#006838] transition-colors duration-300 mb-2">
+        <motion.h4
+          layout="position"
+          className="text-lg md:text-xl font-heavy font-futura-pt text-[#80b0ab] group-hover:text-[#006838] transition-colors duration-300 mb-2"
+        >
           {title}
         </motion.h4>
-        <motion.p layout="position" className="text-sm text-gray-600 font-book font-futura-pt leading-relaxed mb-4 flex-grow">
+        <motion.p
+          layout="position"
+          className="text-sm text-gray-600 font-book font-futura-pt leading-relaxed mb-4 flex-grow"
+        >
           {description}
         </motion.p>
 
@@ -304,8 +356,8 @@ const GridProgramCard: React.FC<GridProgramCardProps> = ({
                 animate="open"
                 exit="collapsed"
                 variants={{
-                  open: { opacity: 1, height: "auto", marginTop: '16px' },
-                  collapsed: { opacity: 0, height: 0, marginTop: '0px' }
+                  open: { opacity: 1, height: "auto", marginTop: "16px" },
+                  collapsed: { opacity: 0, height: 0, marginTop: "0px" },
                 }}
                 transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                 className="overflow-hidden"
@@ -318,13 +370,25 @@ const GridProgramCard: React.FC<GridProgramCardProps> = ({
                 {(socialLinks || websiteUrl) && (
                   <div className="space-y-3 border-t pt-4">
                     {socialLinks?.facebook && (
-                      <EnhancedSocialCard platform="facebook" url={socialLinks.facebook} programName={title} />
+                      <EnhancedSocialCard
+                        platform="facebook"
+                        url={socialLinks.facebook}
+                        programName={title}
+                      />
                     )}
                     {socialLinks?.instagram && (
-                      <EnhancedSocialCard platform="instagram" url={socialLinks.instagram} programName={title} />
+                      <EnhancedSocialCard
+                        platform="instagram"
+                        url={socialLinks.instagram}
+                        programName={title}
+                      />
                     )}
                     {websiteUrl && (
-                      <EnhancedSocialCard platform="website" url={websiteUrl} programName={title} />
+                      <EnhancedSocialCard
+                        platform="website"
+                        url={websiteUrl}
+                        programName={title}
+                      />
                     )}
                   </div>
                 )}
@@ -335,14 +399,14 @@ const GridProgramCard: React.FC<GridProgramCardProps> = ({
       </div>
 
       {hasExpandableContent && (
-         <div className="bg-gray-50 px-6 py-3 mt-auto text-center border-t border-gray-100">
-           <button
+        <div className="bg-gray-50 px-6 py-3 mt-auto text-center border-t border-gray-100">
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-sm font-medium text-[#80b0ab] hover:text-[#006838] group-hover:font-semibold transition-all duration-200"
           >
-            {isOpen ? 'Ver menos' : 'Ver más'}
+            {isOpen ? "Ver menos" : "Ver más"}
           </button>
-         </div>
+        </div>
       )}
     </motion.div>
   );
@@ -357,15 +421,17 @@ interface ImageCarouselProps {
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ imageUrls }) => {
   // Initialize Embla Carousel with loop and autoplay
   const [emblaRef] = useEmblaCarousel(
-    { 
-      loop: true, 
-      align: 'center' 
-    }, 
-    [Autoplay({ 
-      delay: 3000, // 4-second delay
-      stopOnInteraction: false, // Keep playing after user interaction
-      stopOnMouseEnter: true // Pause when mouse hovers over
-    })]
+    {
+      loop: true,
+      align: "center",
+    },
+    [
+      Autoplay({
+        delay: 3000, // 4-second delay
+        stopOnInteraction: false, // Keep playing after user interaction
+        stopOnMouseEnter: true, // Pause when mouse hovers over
+      }),
+    ]
   );
 
   if (!imageUrls || imageUrls.length === 0) {
@@ -373,16 +439,16 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ imageUrls }) => {
   }
 
   return (
-    <div className="relative w-full group overflow-hidden" ref={emblaRef}> 
-      <div className="flex -ml-4"> 
+    <div className="relative w-full group overflow-hidden" ref={emblaRef}>
+      <div className="flex -ml-4">
         {imageUrls.map((url, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="relative flex-grow-0 flex-shrink-0 basis-full sm:basis-4/5 md:basis-2/3 lg:basis-1/2 xl:basis-1/3 pl-4"
           >
             <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300 bg-gray-100">
               <Image
-                src={url} 
+                src={url}
                 alt={`Galería de Impacto - Imagen ${index + 1}`}
                 fill
                 className="object-contain transition-transform duration-500 ease-out group-hover:scale-105"
@@ -399,13 +465,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ imageUrls }) => {
 
 const CasosDeExito = () => {
   // --- Mobile Specific Logic ---
-  const { scrollY } = useScroll(); 
-  const mobileScale = useTransform(scrollY, [0, 300], [1, 1.05]); 
+  const { scrollY } = useScroll();
+  const mobileScale = useTransform(scrollY, [0, 300], [1, 1.05]);
   const [isTouch, setIsTouch] = useState(false);
   const lastScrollY = useSpring(0);
 
   useEffect(() => {
-    setIsTouch('ontouchstart' in window);
+    setIsTouch("ontouchstart" in window);
   }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -415,75 +481,93 @@ const CasosDeExito = () => {
   const getMobileAnim = (delay = 0) => ({
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { 
+    transition: {
       type: "spring",
       stiffness: 100,
       damping: 20,
       mass: 0.5,
-      delay
-    }
+      delay,
+    },
   });
   // --- End Mobile Specific Logic ---
 
-  // --- Program Data --- 
+  // --- Program Data ---
   const programData: ProgramCardProps[] = [
     {
       title: "PADRES DE PRIMERA",
-      description: "Enseña a los padres, madres y cuidadores de niños y niñas en primera infancia competencias parentales positivas que les permitan cambiar modelos de crianza violentos y prevenir el maltrato y el castigo físico.",
+      description:
+        "Enseña a los padres, madres y cuidadores de niños y niñas en primera infancia competencias parentales positivas que les permitan cambiar modelos de crianza violentos y prevenir el maltrato y el castigo físico.",
       images: [
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-1.jpeg',
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-2.jpeg',
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-3.jpeg',
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-4.jpeg'
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-1.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-2.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-3.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/padres-primera-4.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753141607/Impact_Gallery_03_qgjtb9.jpg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753141607/Impact_Gallery_02_eqb0ge.jpg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753141624/Impact_Gallery_04_nkybmk.jpg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753141624/Impact_Gallery_05_xbl5ne.jpg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753141625/Impact_Gallery_07_p330sq.jpg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753141625/Impact_Gallery_08_s6umvy.jpg",
       ],
-      quote: "El programa fue evaluado y logramos una disminución de la práctica del castigo físico en más del 30%.",
-      details: "El Programa fue creado y desarrollado para la Alcaldía de Barranquilla entre el 2020 y el 2023. Tiene una metodología adaptada del modelo de disciplina positiva con un componente virtual y presencial y un análisis de costo-beneficio para poder impactar a un gran número de familias en condición de vulnerabilidad. En este programa hemos impactado de manera directa más de 2.000 personas.",
+      quote:
+        "El programa fue evaluado y logramos una disminución de la práctica del castigo físico en más del 30%.",
+      details:
+        "El Programa fue creado y desarrollado para la Alcaldía de Barranquilla entre el 2020 y el 2023. Tiene una metodología adaptada del modelo de disciplina positiva con un componente virtual y presencial y un análisis de costo-beneficio para poder impactar a un gran número de familias en condición de vulnerabilidad. En este programa hemos impactado de manera directa más de 2.000 personas.",
       logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/padres-primera-logo.png",
-      videoId: "ir2qe-cuo30",
+      videoId: "ESS2hqu7x9s",
+      websiteUrl: "https://crianzaamorosa.redpapaz.org/",
       socialLinks: {
-        facebook: "https://www.facebook.com/padresdeprimerabaq",
-        instagram: "https://www.instagram.com/padresdeprimerabaq"
-      }
+        // facebook: "https://www.facebook.com/padresdeprimerabaq",
+        instagram: "https://www.instagram.com/padresdeprimerabaq",
+      },
     },
     {
-      title: "DIPLOMADO VIRTUAL EN CRIANZA POSITIVA Y DESARROLLO INFANTIL – MAESTROS DE PRIMERA",
-      description: "Programa de formación virtual de 100 horas que diseñé para capacitar a los maestros y madres comunitarias que trabajan con la primera infancia. Fue implementado por la Institución Universitaria Salazar y Herrera de Medellín y contó con el apoyo de más de 13 profesionales de alto nivel.",
+      title:
+        "DIPLOMADO VIRTUAL EN CRIANZA POSITIVA Y DESARROLLO INFANTIL – MAESTROS DE PRIMERA",
+      description:
+        "Programa de formación virtual de 100 horas que diseñé para capacitar a los maestros y madres comunitarias que trabajan con la primera infancia. Fue implementado por la Institución Universitaria Salazar y Herrera de Medellín y contó con el apoyo de más de 13 profesionales de alto nivel.",
       images: [
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-primera-1.jpeg',
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-primera-2.jpeg'
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-primera-1.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-primera-2.jpeg",
       ],
-      details: "De la mano del programa Padres de Primera se hizo esta formación para enseñarles a los agentes educativos que trabajan con la primera infancia de Barranquilla conceptos básicos de crianza positiva y desarrollo infantil, considerando que esta población de educadores tiene un alto impacto en las familias y sus prácticas de crianza. En este Diplomado se graduaron 450 maestros y maestras.",
+      details:
+        "De la mano del programa Padres de Primera se hizo esta formación para enseñarles a los agentes educativos que trabajan con la primera infancia de Barranquilla conceptos básicos de crianza positiva y desarrollo infantil, considerando que esta población de educadores tiene un alto impacto en las familias y sus prácticas de crianza. En este Diplomado se graduaron 450 maestros y maestras.",
       logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/maestros-primera-logo.jpeg",
       socialLinks: {
-        facebook: "https://www.facebook.com/profile.php?id=100031031697025"
-      }
+        facebook: "https://www.facebook.com/profile.php?id=100031031697025",
+      },
     },
     {
       title: "MAESTROS PARA LA VIDA",
-      description: "Programa de formación en competencias comportamentales docentes, disciplina positiva y habilidades socioemocionales.",
+      description:
+        "Programa de formación en competencias comportamentales docentes, disciplina positiva y habilidades socioemocionales.",
       images: [
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-vida-1.jpeg',
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-vida-2.jpeg'
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-vida-1.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/maestros-vida-2.jpeg",
       ],
-      details: "Este Programa fue dirigido a 90 maestros y maestras desde el nivel básico del Colegio Salazar y Herrera, hasta decanos y docentes universitarios de la Institución Universitaria Salazar y Herrera.",
-      logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/maestros-vida-logo.jpeg"
+      details:
+        "Este Programa fue dirigido a 90 maestros y maestras desde el nivel básico del Colegio Salazar y Herrera, hasta decanos y docentes universitarios de la Institución Universitaria Salazar y Herrera.",
+      logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/maestros-vida-logo.jpeg",
     },
     {
       title: "CRIANZA POSITIVA Y CONEXIONES INSPIRADORAS",
-      description: "Programa de formación en parentalidad positiva implementado con 1.000 familias y 100 docentes de los colegios COSMO SCHOOLS de Medellín, en alianza con la Caja de Compensación COMFAMA.",
+      description:
+        "Programa de formación en parentalidad positiva implementado con 1.000 familias y 100 docentes de los colegios COSMO SCHOOLS de Medellín, en alianza con la Caja de Compensación COMFAMA.",
       images: [
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/cosmo-1.jpeg',
-        'https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/cosmo-2.jpeg'
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/cosmo-1.jpeg",
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/cosmo-2.jpeg",
       ],
-      quote: "El programa fue desarrollado entre el 2022 y 2023, y en las evaluaciones encontramos un aumento significativo en diferentes competencias parentales vinculares, protectoras y reflexivas, y una disminución de prácticas punitivas y castigos físicos de más del 30%",
+      quote:
+        "El programa fue desarrollado entre el 2022 y 2023, y en las evaluaciones encontramos un aumento significativo en diferentes competencias parentales vinculares, protectoras y reflexivas, y una disminución de prácticas punitivas y castigos físicos de más del 30%",
       logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/cosmo-logo.png",
-      websiteUrl: "https://crianzaamorosa.redpapaz.org/",
-      details: "Soy la autora principal del contenido virtual de crianza amorosa de la Corporación Red Papaz (con alcance LATAM). Es una guía completa para que padres, madres y cuidadores puedan encontrar respuestas a las preguntas más comunes sobre parentalidad y crianza."
-    }
+      // websiteUrl: "https://crianzaamorosa.redpapaz.org/",
+      details:
+        "Soy la autora principal del contenido virtual de crianza amorosa de la Corporación Red Papaz (con alcance LATAM). Es una guía completa para que padres, madres y cuidadores puedan encontrar respuestas a las preguntas más comunes sobre parentalidad y crianza.",
+    },
   ];
 
   // Find the program with the videoId
-  const videoProgram = programData.find(p => !!p.videoId);
+  const videoProgram = programData.find((p) => !!p.videoId);
 
   // Gather all image URLs for the carousel
   const allImageUrls = programData.reduce((acc, program) => {
@@ -494,7 +578,7 @@ const CasosDeExito = () => {
   }, [] as string[]); // Initialize accumulator as string[]
 
   return (
-    <motion.main 
+    <motion.main
       className="min-h-screen bg-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -502,22 +586,22 @@ const CasosDeExito = () => {
     >
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
-         {/* Apply parallax only to background wrapper on touch */}
-        <motion.div 
+        {/* Apply parallax only to background wrapper on touch */}
+        <motion.div
           className="absolute inset-0"
           style={{
-            scale: isTouch ? mobileScale : undefined
+            scale: isTouch ? mobileScale : undefined,
           }}
         >
-           {/* Keep existing desktop scale animation on inner div */}
-          <motion.div 
+          {/* Keep existing desktop scale animation on inner div */}
+          <motion.div
             className="absolute inset-0"
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
-              src={getCloudinaryUrl('/images/casos-hero.png')}
+              src={getCloudinaryUrl("/images/casos-hero.png")}
               alt="Casos de Éxito"
               fill
               className="object-cover object-[70%_35%] md:object-[center_15%]"
@@ -534,11 +618,13 @@ const CasosDeExito = () => {
               <motion.div
                 className="overflow-hidden mb-4 md:mb-8" // Adjusted margin
                 // Conditional Animation
-                {...(isTouch ? getMobileAnim(0) : {
-                  initial: { opacity: 0, y: 20 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 1.2, delay: 0.8 }
-                })}
+                {...(isTouch
+                  ? getMobileAnim(0)
+                  : {
+                      initial: { opacity: 0, y: 20 },
+                      animate: { opacity: 1, y: 0 },
+                      transition: { duration: 1.2, delay: 0.8 },
+                    })}
               >
                 <p className="text-white/70 font-futura-pt font-book tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm">
                   Casos de Éxito
@@ -546,7 +632,7 @@ const CasosDeExito = () => {
               </motion.div>
 
               <div className="relative">
-                 {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
+                {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
                 <motion.div
                   className="absolute -left-4 md:-left-8 -top-8 md:-top-10 hidden md:block" // Hidden on mobile
                   initial={{ opacity: 0, x: -50 }}
@@ -560,25 +646,33 @@ const CasosDeExito = () => {
 
                 {/* Adjusted padding for mobile */}
                 <div className="space-y-1 md:space-y-2 text-left relative z-10 pl-0 md:pl-4">
-                  {["En la crianza", "no hay recetas;", "sí hay estrategias"].map((text, index) => (
+                  {[
+                    "En la crianza",
+                    "no hay recetas;",
+                    "sí hay estrategias",
+                  ].map((text, index) => (
                     <motion.div
                       key={text}
                       className="overflow-hidden"
                       // Conditional Animation (staggered for mobile)
-                      {...(isTouch ? getMobileAnim(0.2 + index * 0.1) : {
-                        initial: { y: 80 },
-                        animate: { y: 0 },
-                        transition: { 
-                          duration: 1.2, 
-                          delay: 1.2 + (index * 0.15),
-                          ease: [0.25, 1, 0.5, 1]
-                        }
-                      })}
+                      {...(isTouch
+                        ? getMobileAnim(0.2 + index * 0.1)
+                        : {
+                            initial: { y: 80 },
+                            animate: { y: 0 },
+                            transition: {
+                              duration: 1.2,
+                              delay: 1.2 + index * 0.15,
+                              ease: [0.25, 1, 0.5, 1],
+                            },
+                          })}
                     >
-                      <p 
+                      <p
                         // Responsive text size
                         className={`text-5xl md:text-7xl font-futura-pt ${
-                          index === 2 ? 'font-heavy text-[#98b475]' : 'font-light text-white/90'
+                          index === 2
+                            ? "font-heavy text-[#98b475]"
+                            : "font-light text-white/90"
                         } leading-[1.1] md:leading-[1.2] tracking-tight`}
                       >
                         {text}
@@ -587,7 +681,7 @@ const CasosDeExito = () => {
                   ))}
                 </div>
 
-                 {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
+                {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
                 <motion.div
                   className="absolute right-0 md:-left-[-550px] -bottom-4 md:-bottom-6 hidden md:block" // Hidden on mobile
                   initial={{ opacity: 0, x: 50 }}
@@ -603,11 +697,13 @@ const CasosDeExito = () => {
               <motion.div
                 className="mt-8 md:mt-12 max-w-md md:max-w-xl" // Adjusted margin/max-width
                 // Conditional Animation
-                {...(isTouch ? getMobileAnim(0.5) : {
-                  initial: { opacity: 0, y: 40 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 1.4, delay: 2 }
-                })}
+                {...(isTouch
+                  ? getMobileAnim(0.5)
+                  : {
+                      initial: { opacity: 0, y: 40 },
+                      animate: { opacity: 1, y: 0 },
+                      transition: { duration: 1.4, delay: 2 },
+                    })}
               >
                 {/* Responsive text size */}
                 <h1 className="text-2xl md:text-4xl font-heavy font-futura-pt text-white/90 leading-tight">
@@ -631,12 +727,20 @@ const CasosDeExito = () => {
             <motion.div
               className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2"
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
             >
               <motion.div
                 className="w-1 h-2 bg-white/80 rounded-full"
                 animate={{ y: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
               />
             </motion.div>
             <motion.span
@@ -649,33 +753,112 @@ const CasosDeExito = () => {
           </motion.div>
         )}
       </section>
+      <section className=" md:max-w-[900px] mx-auto">
+        <motion.h2
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mt-16 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Reconocimientos
+          <motion.div
+            className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+        </motion.h2>
+
+        <div className=" mx-center flex flex-col md:flex-row md:gap-4 justify-items-center items-center">
+          <div className="  md:w-[60%] mb-6 md:mb-0 ">
+            <MainQuote>
+              Obtuve un reconocimiento de MIT- HARVARD COLOMBIA por mi trabajo e
+              impacto social en la lucha contra el castigo físico y los malos
+              tratos en las familias.
+            </MainQuote>
+          </div>
+          <div className="flex flex-wrap gap-6 w-full md:w-[40%] p-4">
+            <Image
+              src={getCloudinaryUrl("Reconocimiento_Harvard_rl07pf")}
+              alt="Reconocimiento MIT-Harvard Colombia"
+              width={600}
+              height={600}
+              className="rounded-lg shadow-lg"
+            ></Image>
+            <Image
+              src={getCloudinaryUrl(
+                "Reconocimiento_Harvard_Cata_Suarez_xklgvs"
+              )}
+              width={600}
+              height={600}
+              alt="Reconocimiento MIT-Harvard Colombia Cata Suárez"
+              className="rounded-lg shadow-lg"
+            ></Image>
+          </div>
+        </div>
+      </section>
 
       {/* Standalone Video Section */}
-      {videoProgram && videoProgram.videoId && (
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 md:px-8 max-w-4xl"> {/* Constrained width */} 
-             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-             >
-                <VideoEmbed videoId={videoProgram.videoId} title={videoProgram.title} />
-             </motion.div>
+      <section className="pt-12 md:py-16">
+        <motion.h2
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mb-12 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          DEL CASTIGO FÍSICO AL AMOR FAMILIAR:<br></br> LA VERDADERA
+          TRANSFORMACIÓN SOCIAL
+          <motion.div
+            className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+        </motion.h2>
+        {videoProgram && videoProgram.videoId && (
+          <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+            {" "}
+            {/* Constrained width */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <VideoEmbed
+                videoId={videoProgram.videoId}
+                title={videoProgram.title}
+              />
+            </motion.div>
           </div>
-        </section>
-      )}
+        )}
+        <div className="flex justify-center mt-4 ">
+          <AnimatedButton
+            href="https://www.youtube.com/watch?v=ir2qe-cuo30&t=662s"
+            text=" Ver Documental Completo"
+          />
+        </div>
+      </section>
 
       {/* Main Quote */}
       <MainQuote>
         Todos mis programas tienen más del 90% de satisfacción y muestran
-        impactos significativos en todas las evaluaciones que realizamos
+        impactos significativos en todas las evaluaciones que realizamos y
+        muestran impactos significativos en todas las evaluaciones que
+        realizamos. El reporte de la práctica del castigo físico lo hemos
+        disminuido hasta en un 30%”
       </MainQuote>
 
       {/* Grid Programs Section */}
-      <section className="py-12 md:py-16 bg-gray-50"> {/* Added light bg for contrast */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        {" "}
+        {/* Added light bg for contrast */}
         <div className="container mx-auto px-4 md:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#80b0ab] text-center mb-8 md:mb-12"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -684,11 +867,24 @@ const CasosDeExito = () => {
           >
             Casos de Éxito Destacados
           </motion.h2>
+          <motion.p
+            className="text-gray-700 mb-4 md:mb-6 max-w-[900px] mx-auto text-base md:text-lg font-book font-futura-pt"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          >
+            Por más de una década me he enfocado en diseñar, liderar e
+            implementar programas masivos de educación positiva, parentalidad
+            positiva, competencias comportamentales docentes, habilidades
+            socioemocionales y muchos temas más. Algunos de mis programas más
+            representativos y de mayor impacto son:
+          </motion.p>
 
           {/* 2x2 Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
             {programData.map((program, index) => (
-              <GridProgramCard 
+              <GridProgramCard
                 key={program.title || index} // Use title as key if available
                 logo={program.logo}
                 title={program.title}
@@ -699,15 +895,16 @@ const CasosDeExito = () => {
               />
             ))}
           </div>
-          
         </div>
       </section>
 
       {/* New Image Carousel Section */}
       {allImageUrls.length > 0 && (
-        <section className="py-16 md:py-24 bg-white"> {/* Or another suitable background */}
+        <section className="py-16 md:py-24 bg-white">
+          {" "}
+          {/* Or another suitable background */}
           <div className="container mx-auto px-4 md:px-8">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] text-center mb-8 md:mb-12"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -720,9 +917,8 @@ const CasosDeExito = () => {
           </div>
         </section>
       )}
-
     </motion.main>
   );
 };
 
-export default CasosDeExito; 
+export default CasosDeExito;

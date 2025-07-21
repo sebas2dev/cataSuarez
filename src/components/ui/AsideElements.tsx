@@ -6,7 +6,7 @@ type CardItemProps = {
 };
 export default function AsideElements({ title, imageUrl }: CardItemProps) {
   return (
-    <div className=" flex  items-center gap-4 my-4">
+    <div className=" flex justify-center items-center gap-4 my-4">
       <div className="relative w-[50px] h-[50px]  rounded-lg overflow-hidden">
         <Image
           src={imageUrl}

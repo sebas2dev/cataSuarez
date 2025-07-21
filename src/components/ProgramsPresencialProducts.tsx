@@ -59,9 +59,23 @@ export default function ProgramsPresencialProducts() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book  ">
       <div className="max-w-[900px] mx-auto text-gray-600 ">
-        <h1 className="text-center text-[#006838] font-extrabold md:text-4xl font-heavy font-futura-pt mb-4 ">
+        <motion.h2
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] my-16 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           Programas Presenciales
-        </h1>
+          <motion.div
+            className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+        </motion.h2>
+
         <p className="text-center text-[#006838] font-bold mb-4">
           Talleres de crianza y educación positiva para, padres, educadores y
           organizaciones

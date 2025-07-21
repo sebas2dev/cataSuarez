@@ -269,11 +269,12 @@ const SobreMiProfessional = () => {
                       />
                     </h3>
                     <p className="font-book font-futura-pt leading-relaxed text-lg text-[#2A2A2A] mb-8">
-                      Mi trayectoria incluye roles como psicóloga educativa en
-                      el colegio Vermont de Medellín, donde he trabajado en el
-                      desarrollo integral de los estudiantes, implementando
-                      programas innovadores que fomentan el crecimiento personal
-                      y académico.
+                      Fui psicóloga educativa en el Colegio Vermont Medellín por
+                      4 años donde creé programas innovadores para fortalecer el
+                      crecimiento personal y la convivencia escolar desde
+                      preescolar hasta primaria.<br></br> Llevo décadas
+                      asesorando familias y promoviendo la práctica de la
+                      crianza y la educación positiva.
                     </p>
                     <div className="flex items-center space-x-6">
                       <motion.div
@@ -345,13 +346,45 @@ const SobreMiProfessional = () => {
                   <div className="absolute inset-0 bg-[#006838] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   <div className="relative z-10 p-8 md:p-10">
                     <h3 className="text-3xl md:text-4xl font-heavy font-futura-pt mb-6">
-                      Colaboración con la Presidencia
+                      Conferencista y creadora de contenidos
                     </h3>
-                    <p className="font-book font-futura-pt leading-relaxed text-lg md:text-xl opacity-90">
-                      He colaborado con la Presidencia de Colombia en programas
-                      de desarrollo alternativo, apoyando a comunidades
-                      campesinas, indígenas y afrodescendientes, contribuyendo
-                      al desarrollo social y económico del país.
+                    <p className="font-book font-futura-pt leading-relaxed text-lg md:text-lg opacity-90">
+                      Conferenciasta en diferentes temas de crianza, desarrollo
+                      humano, educación socioemocional, comunicación, liderazgo.{" "}
+                      <br></br>He desarrollado contenidos virtuales de
+                      parentalidad positiva como la serie de libros:
+                      “Herramientas Prácticas de Crianza para…” y el kit
+                      virtual: “la Crianza Amorosa: un Regalo para la Vida” de
+                      la Corporación Red PaPaz &nbsp;
+                      <a href="https://crianzaamorosa.redpapaz.org">
+                        https://crianzaamorosa.redpapaz.org
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="relative bg-white rounded-2xl shadow-2xl overflow-hidden group border-l-4 border-[#006838] hover:border-l-[#98b475]"
+                  whileHover={{ y: -5, scale: 1.01 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="absolute inset-0 bg-[#006838]/5 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  <div className="p-8 md:p-10 relative">
+                    <h3 className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mb-6 relative inline-block group-hover:text-[#006838]/90 transition-colors duration-300">
+                      Docente Universitaria
+                      <motion.div
+                        className="absolute -bottom-2 left-0 h-1 bg-[#98B475]"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                      />
+                    </h3>
+                    <p className="font-book font-futura-pt leading-relaxed text-lg text-[#2A2A2A] mb-8">
+                      Fui docente por 6 años de la Maestría en Salud Mental de
+                      la Universidad Pontificia Bolivariana con la cátedra:
+                      “Promoción en Salud Mental y Prevención de Trastornos
+                      Mentales”
                     </p>
                   </div>
                 </motion.div>
@@ -400,13 +433,17 @@ const SobreMiProfessional = () => {
                     <div className="absolute inset-0 bg-[#006838]/5 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                     <div className="relative">
                       <h4 className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#2A2A2A] mb-4 group-hover:text-[#006838] transition-colors duration-300">
-                        Fundaciones y Primera Infancia
+                        Impacto comunitario
                       </h4>
                       <p className="font-book font-futura-pt leading-relaxed text-lg text-[#2A2A2A]">
-                        Mi vocación por la educación me llevó a trabajar con
-                        fundaciones para la promoción de la primera infancia,
-                        impulsando el bienestar y el aprendizaje en los primeros
-                        años de vida.
+                        Trabajé inmersa con una comunidad campesina del centro
+                        de México en un programa social y educativo. <br />
+                        <br />
+                        Desde el gobierno nacional manejé varios programas
+                        comunitarios, como el de la promoción de la cultura de
+                        legalidad con 50.000 familias campesinas cocaleras y
+                        proyectos de cooperación internacional para apoyar
+                        comunidades afrodescendientes.
                       </p>
                     </div>
                   </div>
@@ -421,12 +458,18 @@ const SobreMiProfessional = () => {
                     <div className="absolute inset-0 bg-[#98B475] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                     <div className="relative z-10">
                       <h4 className="text-2xl md:text-3xl font-heavy font-futura-pt mb-4">
-                        Impacto en la Comunidad
+                        Impacto social
                       </h4>
                       <p className="font-book font-futura-pt leading-relaxed text-lg opacity-90">
-                        A través de mi trabajo, he contribuido al desarrollo de
-                        programas educativos que benefician a cientos de niños y
-                        familias en comunidades vulnerables.
+                        He trabajado en programas educativos de gobiernos
+                        locales y fundaciones para la promoción del desarrollo
+                        de la primera infancia.
+                        <br />
+                        <br /> He creado e implementado programas educativos
+                        para la prevención del castigo físico y del uso de malos
+                        tratos con la infancia y la adolescencia para
+                        comunidades vulnerables, entornos educativos y
+                        familiares.
                       </p>
                     </div>
                   </div>

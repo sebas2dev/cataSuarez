@@ -53,7 +53,7 @@ export default function CardFoldable({
           {/* Gradiente y título */}
           {title && (
             <div className="absolute z-10 bottom-0 w-full p-4 rounded-t-lg backdrop-blur-sm bg-white/30">
-              <h3 className="text-white font-bold text-2xl uppercase">
+              <h3 className="text-white font-bold text-xl uppercase">
                 {title}
               </h3>
             </div>

@@ -93,10 +93,10 @@ export default function PruebasPage() {
   const dataSelected = cardData.filter((card, index) => index === openIndex);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book   ">
-      <div className="md-max-w-[900px] max-w-[90vw] mx-auto text-gray-600 ">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book ">
+      <div className="md:max-w-[900px] max-w-[90vw] mx-auto text-gray-600  ">
         <motion.h2
-          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mt-12 md:mt-0 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function PruebasPage() {
         {/* <h1 className="text-center mt-16 mb-4 text-[#006838] font-extrabold md:text-4xl text-3xl font-heavy font-futura-pt">
           Productos digitales
         </h1> */}
-        <p className="text-center">
+        <p className="text-center ">
           Si eres padre, madre, cuidador, maestro o lideras una institucion
           educativa...
         </p>
@@ -122,13 +122,13 @@ export default function PruebasPage() {
           Quiero que trabajemos juntos para fortalecer tu familia y transformar
           nuestra sociedad
         </p>
-        <p>
+        <p className="text-center md:text-left">
           Acompañar la vida de un niño, niña o adolescente es una gran
           responsabilidad, y todo empieza por nosotros: el ejemplo la lección
           mas poderosa
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 ">
         {cardData.map((card, index) => (
           <ProgramasCardFoldable
             key={index}
@@ -147,7 +147,7 @@ export default function PruebasPage() {
         ))}
       </div>
 
-      <div className="hidden md:block bg-[#006838]  w-full my-8">
+      <div className="hidden md:block bg-[#006838]  w-full md:my-8 ">
         {openIndex !== null &&
           dataSelected.map((card, index) => (
             <motion.div

@@ -83,12 +83,12 @@ export default function ConferencesSection() {
         </li>
       </ol>
       <div className="flex flex-col md:flex-row gap-8 my-8">
-        <div className=" w-[80%] h-80  md:h-auto md:w-[45%] relative m-8">
+        <div className=" w-[95%] h-80  md:h-auto md:w-[50%] relative m-8">
           <Image
-            src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1752762944/12._Secci%C3%B3n_conferencias_o2lfxe_c_fill_ar_3_4_g_auto_upao4v.jpg"
+            src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746027045/images/maestros-primera-2.jpg"
             fill
             alt={"Conferencia sobre crianzas"}
-            className="rounded-lg shadow-lg "
+            className="object-cover object-left rounded-lg shadow-lg "
           />
           <div className="bg-white w-[80px] h-[80px] top-2 left-2 rounded-full z-10 absolute overflow-hidden">
             <Image

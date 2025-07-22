@@ -250,7 +250,7 @@ const SobreMiEducation = () => {
             <div className="flex-grow flex flex-col items-center text-center">
               <div className="mb-4 h-16 md:h-20 w-32 md:w-40 relative group-hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746026934/images/education/berkeley-logo.png"
+                  src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1753148715/Certificado_z4x0zb.png"
                   alt="Universidad de Berkley Logo"
                   fill
                   className="object-contain"

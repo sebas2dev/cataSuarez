@@ -57,10 +57,10 @@ export default function ProgramsPresencialProducts() {
   const dataSelected = cardData.filter((card, index) => index === openIndex);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book  ">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book">
       <div className="max-w-[900px] mx-auto text-gray-600 ">
         <motion.h2
-          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] my-16 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          className="text-3xl md:text-4xl px-0 font-heavy font-futura-pt text-[#006838] my-16 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -80,7 +80,7 @@ export default function ProgramsPresencialProducts() {
           Talleres de crianza y educación positiva para, padres, educadores y
           organizaciones
         </p>
-        <p>
+        <p className="px-4">
           En estos talleres encontrarás herramientas prácticas y basadas en
           evidencia para transformar la manera en que te relacionas con niños,
           niñas y adolescentes, ya sea en el hogar o en el aula. A través de
@@ -104,6 +104,10 @@ export default function ProgramsPresencialProducts() {
             productEspecifications={card.productEspecifications}
             buttonLink={card.buttonLink}
             logoUrl={card.logoUrl}
+            buttonTextFamily={card.buttonTextFamily}
+            buttonLinkFamily={card.buttonLinkFamily}
+            buttonTextTeachers={card.buttonTextTeachers}
+            buttonLinkTeachers={card.buttonLinkTeachers}
           />
         ))}
       </div>

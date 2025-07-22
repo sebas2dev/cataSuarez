@@ -27,9 +27,9 @@ export default function PruebasPage() {
       <ul class="list-disc pl-6">
         <li>10 horas de formación</li>
         <li>Cursos virtual con acompañamiento en Vivo </li>
-        <li> Este curso lo realizo 3 veces al año con un acompañamiento semanal en Vivo dirate dos meses.</li>
+        <li> Este curso lo realizo 3 veces al año con un acompañamiento semanal en Vivo duración de dos meses.</li>
         <li> Acceso a recursos y materiales especializados </li>
-        <li>Sesiones practicas dinámicas </li>
+        <li>Sesiones prácticas dinámicas </li>
         <li>Certificado de participación </li>
       </ul>
       `,
@@ -57,12 +57,12 @@ export default function PruebasPage() {
       `,
       productEspecifications: `
       <p class="font-bold">En esta serie puedes encontrar Herramientas Prácticas de Crianza Para:</p><br>
-      <ul class="list-disc pl-6">
+      <ol class="list-decimal pl-6">
       <li>Decir NO sin culpa ni castigos</li>
       <li>Aumentar la autoestima y promover una vida con bienestar, exitosa y feliz</li>
       <li>Hablar de la sexualidad sin temor ni vergüenza</li>
       <li>Desarrollar la inteligencia emocional para tener éxito y felicidad</li>
-      </ul>
+      </ol>
       <br>
       <p class="font-bold">Obtén el primer libro GRATIS diligenciando el siguiente formulario.</p>     
        `,

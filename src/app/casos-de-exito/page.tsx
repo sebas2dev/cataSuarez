@@ -72,7 +72,7 @@ const MainQuote = ({ children }: { children: React.ReactNode }) => (
     />
     <div className="relative bg-white/90 backdrop-blur-sm border-l-4 md:border-l-8 border-[#80b0ab] p-6 md:p-12 rounded-r-xl md:rounded-r-3xl shadow-2xl overflow-hidden">
       <motion.p
-        className="text-xl md:text-2xl font-book font-futura-pt text-[#80b0ab] leading-relaxed text-center"
+        className="text-xl md:text-2xl font-book font-futura-pt text-[#006838] leading-relaxed text-center"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}

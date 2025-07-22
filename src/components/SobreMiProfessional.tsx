@@ -84,7 +84,7 @@ const SobreMiProfessional = () => {
       />
 
       {/* Hero Section */}
-      <div className="relative h-[70vh] sm:h-[40vh] md:h-[100vh] max-h-[800px] mb-32 pb-32 md:mb-40">
+      <div className="relative h-[70vh] sm:h-[70vh] md:h-[50vh] lg:h-[100vh] max-h-[800px] mb-32 pb-32 md:mb-40">
         <Image
           src={getCloudinaryUrl("/images/2.png")}
           alt="Professional Impact"
@@ -94,13 +94,13 @@ const SobreMiProfessional = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
 
-        <div className="absolute inset-0 container mx-auto px-4 md:px-6 flex flex-col justify-start md:pt-20 lg:pt-24 md:pb-40 lg:pb-48">
+        <div className="mt-12 lg:left-[-300px] md:left-[-100px]  absolute inset-0 container   md:pt-20 lg:pt-24 md:pb-0 lg:pb-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative w-full md:max-w-2xl md:mx-auto pr-[130px] sm:pr-[150px] md:pr-0"
+            className=" relative w-full md:max-w-2xl md:mx-auto pr-[130px] sm:pr-[150px] md:pr-0"
           >
             <motion.div
               className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-[#98B475] to-[#006838]"
@@ -112,9 +112,9 @@ const SobreMiProfessional = () => {
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heavy font-futura-pt mb-4 md:mb-8 text-white relative">
               Experiencia profesional
               <motion.div
-                className="absolute -bottom-2 left-0 h-1 bg-[#98B475]"
+                className="absolute -bottom-2 left-0 h-1 bg-[#98B475] "
                 initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
+                whileInView={{ width: "60%" }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.8 }}
               />
@@ -139,7 +139,7 @@ const SobreMiProfessional = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
             <motion.div
-              className="bg-white rounded-xl shadow-2xl p-2 sm:p-2 md:p-2 lg:p-3 xl:p-4 group cursor-pointer relative overflow-hidden border-l-4 border-[#006838] hover:border-l-[#98b475]"
+              className="bg-white rounded-xl shadow-2xl p-2 sm:p-2 md:p-2 lg:p-3 xl:p-4 group  relative overflow-hidden border-l-4 border-[#006838] hover:border-l-[#98b475]"
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -158,7 +158,7 @@ const SobreMiProfessional = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-[#006838] text-white rounded-xl shadow-2xl p-2 sm:p-2 md:p-2 lg:p-3 xl:p-4 group cursor-pointer overflow-hidden relative border-l-4 border-white hover:border-gray-200"
+              className="bg-[#006838] text-white rounded-xl shadow-2xl p-2 sm:p-2 md:p-2 lg:p-3 xl:p-4 group overflow-hidden relative border-l-4 border-white hover:border-gray-200"
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -170,14 +170,14 @@ const SobreMiProfessional = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <AnimatedNumber value={35000} suffix="+" />
+                <AnimatedNumber value={3500} suffix="+" />
               </motion.div>
               <div className="relative text-[9px] sm:text-[10px] md:text-xs lg:text-xs font-book font-futura-pt opacity-90">
                 Familias y Educadores
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl shadow-2xl p-2 sm:p-2 md:p-2 lg:p-3 xl:p-4 group cursor-pointer relative overflow-hidden border-l-4 border-[#006838] hover:border-l-[#98b475]"
+              className="bg-white rounded-xl shadow-2xl p-2 sm:p-2 md:p-2 lg:p-3 xl:p-4 group relative overflow-hidden border-l-4 border-[#006838] hover:border-l-[#98b475]"
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -278,7 +278,7 @@ const SobreMiProfessional = () => {
                     </p>
                     <div className="flex items-center space-x-6">
                       <motion.div
-                        className="w-14 h-14 md:w-16 md:h-16 bg-[#006838]/10 rounded-full flex items-center justify-center group/icon cursor-pointer"
+                        className="w-14 h-14 md:w-16 md:h-16 bg-[#006838]/10 rounded-full flex items-center justify-center group/icon "
                         whileHover={{ scale: 1.1, rotate: 180 }}
                         transition={{ duration: 0.5 }}
                       >
@@ -356,7 +356,10 @@ const SobreMiProfessional = () => {
                       “Herramientas Prácticas de Crianza para…” y el kit
                       virtual: “la Crianza Amorosa: un Regalo para la Vida” de
                       la Corporación Red PaPaz &nbsp;
-                      <a href="https://crianzaamorosa.redpapaz.org">
+                      <a
+                        href="https://crianzaamorosa.redpapaz.org"
+                        target="_blank"
+                      >
                         https://crianzaamorosa.redpapaz.org
                       </a>
                     </p>

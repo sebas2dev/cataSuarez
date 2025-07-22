@@ -22,7 +22,7 @@ export default function PruebasPage() {
       productDescription:
         "Formación virtual de 10 horas para apoyar a padres, madres y maestros en su labor de acompañar y educar adolescentes en una manera eficaz y tranquila.\n \nEste curso  se realiza 3 veces al años con un acompañamiento semanal en Vivo durante dos meses.\n\n",
       productEspecifications:
-        "10 horas de formación\nCursos virtual con acompañamiento en Vivo \n Este curso lo realizo 3 veces al año con un acompañamiento semanal en Vivo dirate dos meses. \n Acceso a recursos y materiales especializados \nSesiones practicas dinámicas \nCertificado de participación",
+        "10 horas de formación\nCursos virtual con acompañamiento en Vivo \n Este curso lo realizo 3 veces al año con un acompañamiento semanal en Vivo duración de dos meses. \n Acceso a recursos y materiales especializados \nSesiones prácticas dinámicas \nCertificado de participación",
       buttonLink: "#",
       openindex: 0,
     },

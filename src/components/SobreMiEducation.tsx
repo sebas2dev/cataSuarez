@@ -216,17 +216,20 @@ const SobreMiEducation = () => {
             whileHover={{ y: -4 }}
           >
             <div className="flex-grow hover:bg-[#006838]/5 transition-colors duration-300 ease-out">
-              <div className="mb-3 h-16 md:h-20 w-full relative group-hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1752869808/GLOBAL_NLP1.jpg_y5xy3o.png"
-                  alt="Global NLP Training Logo"
-                  fill
-                  className="object-contain"
-                />
+              <div className="flex items-start mb-4">
+                <div className="flex-shrink-0 w-20 h-16 md:w-24 md:h-20 flex items-center justify-center mr-4 relative group-hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1752869808/GLOBAL_NLP1.jpg_y5xy3o.png"
+                    alt="Asociación Americana de Disciplina Positiva Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h4 className="text-xl font-bold font-futura-pt text-[#006838] group-hover:text-[#98b475] transition-colors duration-300 self-center">
+                  GLOBAL NLP TRAINING
+                </h4>
               </div>
-              <h4 className="text-xl font-bold font-futura-pt text-[#006838] group-hover:text-[#98b475] transition-colors duration-300 mb-3">
-                GLOBAL NLP TRAINING
-              </h4>
+
               <ul className="font-book font-futura-pt text-base text-[#2A2A2A]/80 list-disc pl-5 space-y-1">
                 <li>Master Practitioner en Programación Neurolinguistica</li>
                 <li>Coach de Inteligencia Social y Emocional</li>

@@ -48,7 +48,7 @@ export default function PruebasPage() {
       <p>Una colección de 4 libros pensada para madres, padres y cuidadores que quieren 
       desarrollar habilidades para ejercer una educación más positiva y amorosa y conectar 
       mejor con sus hijos e hijas, educar desde el respeto y tener una experiencia de crianza 
-      más satisfactoria e influyente
+      más satisfactoria e influyente.
       </p>
       <p >
       Cada libro ofrece herramientas concretas y prácticas para abordar desafíos y retos comunes de crianza.
@@ -60,7 +60,7 @@ export default function PruebasPage() {
       <ol class="list-decimal pl-6">
       <li>Decir NO sin culpa ni castigos</li>
       <li>Aumentar la autoestima y promover una vida con bienestar, exitosa y feliz</li>
-      <li>Hablar de la sexualidad sin temor ni vergüenza</li>
+      <li>Hablar de sexualidad sin temor ni vergüenza</li>
       <li>Desarrollar la inteligencia emocional para tener éxito y felicidad</li>
       </ol>
       <br>
@@ -96,7 +96,7 @@ export default function PruebasPage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book ">
       <div className="md:max-w-[900px] max-w-[90vw] mx-auto text-gray-600  ">
         <motion.h2
-          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mt-12 md:mt-0 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mt-12 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -124,8 +124,8 @@ export default function PruebasPage() {
         </p>
         <p className="text-center md:text-left">
           Acompañar la vida de un niño, niña o adolescente es una gran
-          responsabilidad, y todo empieza por nosotros: el ejemplo la lección
-          mas poderosa
+          responsabilidad, y todo empieza por nosotros: El ejemplo da las
+          lecciones más poderosas de la vida.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 ">

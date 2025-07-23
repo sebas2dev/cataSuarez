@@ -77,7 +77,7 @@ export default function ProgramsPresencialProducts() {
         </motion.h2>
 
         <p className="text-center text-[#006838] font-bold mb-4">
-          Talleres de crianza y educación positiva para, padres, educadores y
+          Talleres de crianza y educación positiva para padres, educadores y
           organizaciones
         </p>
         <p className="px-4">

@@ -339,7 +339,7 @@ const SobreMiProfessional = () => {
                 </motion.div>
 
                 <motion.div
-                  className="bg-[#98B475] rounded-2xl shadow-2xl text-white relative overflow-hidden group cursor-pointer border-l-4 border-white hover:border-gray-200"
+                  className="bg-[#5C8A3F] rounded-2xl shadow-2xl text-white relative overflow-hidden group cursor-pointer border-l-4 border-white hover:border-gray-200"
                   whileHover={{ y: -5, scale: 1.01 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -348,21 +348,29 @@ const SobreMiProfessional = () => {
                     <h3 className="text-3xl md:text-4xl font-heavy font-futura-pt mb-6">
                       Conferencista y creadora de contenidos
                     </h3>
-                    <p className="font-book font-futura-pt leading-relaxed text-lg md:text-lg opacity-90">
+                    <p className="font-book font-futura-pt leading-relaxed text-lg md:text-lg pb-4">
                       Conferenciasta en diferentes temas de crianza, desarrollo
-                      humano, educación socioemocional, comunicación, liderazgo.{" "}
+                      humano, educación socioemocional, comunicación, liderazgo.
                       <br></br>He desarrollado contenidos virtuales de
-                      parentalidad positiva como la serie de libros:
-                      “Herramientas Prácticas de Crianza para…” y el kit
-                      virtual: “la Crianza Amorosa: un Regalo para la Vida” de
-                      la Corporación Red PaPaz &nbsp;
-                      <a
-                        href="https://crianzaamorosa.redpapaz.org"
-                        target="_blank"
-                      >
-                        https://crianzaamorosa.redpapaz.org
-                      </a>
+                      parentalidad positiva como la{" "}
+                      <strong className="text-neutral-800 ">
+                        serie de libros
+                      </strong>
+                      : “Herramientas Prácticas de Crianza para…” y el kit
+                      virtual:{" "}
+                      <strong className="text-neutral-800 ">
+                        “la Crianza Amorosa: un Regalo para la Vida” de la
+                        Corporación Red PaPaz.
+                      </strong>{" "}
+                      &nbsp;
                     </p>
+                    <a
+                      href="https://crianzaamorosa.redpapaz.org"
+                      target="_blank"
+                      className="text-neutral-800 font-book font-futura-pt leading-relaxed text-lg md:text-lg hover:text-white hover:scale-105 transition"
+                    >
+                      https://crianzaamorosa.redpapaz.org
+                    </a>
                   </div>
                 </motion.div>
 
@@ -458,7 +466,7 @@ const SobreMiProfessional = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="relative p-8 md:p-10">
-                    <div className="absolute inset-0 bg-[#98B475] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-[#5C8A3F] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                     <div className="relative z-10">
                       <h4 className="text-2xl md:text-3xl font-heavy font-futura-pt mb-4">
                         Impacto social
@@ -499,7 +507,7 @@ const SobreMiProfessional = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5 }}
                     >
-                      Impacto Social
+                      {/* Impacto Social */}
                     </motion.h3>
                     <motion.p
                       className="text-base md:text-lg font-book font-futura-pt text-white/90"

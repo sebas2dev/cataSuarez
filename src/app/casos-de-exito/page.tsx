@@ -515,7 +515,7 @@ const CasosDeExito = () => {
         "El Programa fue creado y desarrollado para la Alcaldía de Barranquilla entre el 2020 y el 2023. Tiene una metodología adaptada del modelo de disciplina positiva con un componente virtual y presencial y un análisis de costo-beneficio para poder impactar a un gran número de familias en condición de vulnerabilidad. En este programa hemos impactado de manera directa más de 2.000 personas.",
       logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/padres-primera-logo.png",
       videoId: "ESS2hqu7x9s",
-      websiteUrl: "https://crianzaamorosa.redpapaz.org/",
+      websiteUrl: "www.padresdeprimera.com",
       socialLinks: {
         // facebook: "https://www.facebook.com/padresdeprimerabaq",
         instagram: "https://www.instagram.com/padresdeprimerabaq",
@@ -552,7 +552,7 @@ const CasosDeExito = () => {
     {
       title: "CRIANZA POSITIVA Y CONEXIONES INSPIRADORAS",
       description:
-        "Programa de formación en parentalidad positiva implementado con 1.000 familias y 100 docentes de los colegios COSMO SCHOOLS de Medellín, en alianza con la Caja de Compensación COMFAMA.",
+        "programa de formación en parentalidad y educación positiva con 1000 familias y 100 docentes de los Colegios Cosmo Schools de Medellin.",
       images: [
         "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/cosmo-1.jpeg",
         "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_1200/v1746026927/images/cosmo-2.jpeg",
@@ -562,7 +562,7 @@ const CasosDeExito = () => {
       logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/cosmo-logo.png",
       // websiteUrl: "https://crianzaamorosa.redpapaz.org/",
       details:
-        "Soy la autora principal del contenido virtual de crianza amorosa de la Corporación Red Papaz (con alcance LATAM). Es una guía completa para que padres, madres y cuidadores puedan encontrar respuestas a las preguntas más comunes sobre parentalidad y crianza.",
+        "Este proyecto se desarrolló en el 2022 y 2023 con el apoyo de la Caja de Compensación Comfama.",
     },
   ];
 

@@ -145,7 +145,7 @@ const About = () => {
                   Desde los 19 años estoy trabajando con programas Sociales y
                   educativos de gran alcance. He trabajado en diferentes
                   contextos educativos y sociales, públicos, privados y
-                  fundacionales”.
+                  fundacionales.
                 </p>
                 {/* <p> También fui docente por 6 años de la Maestría en salud mental de la Universidad Pontificia Bolivariana con la cátedra “Promoción en Salud Mental y Prevención de Trastornos Mentales</p> */}
               </motion.div>

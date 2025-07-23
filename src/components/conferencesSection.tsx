@@ -28,7 +28,7 @@ export default function ConferencesSection() {
       )}`,
     },
     {
-      title: "Como convertirme en un padre o lider para inspirar",
+      title: "Como convertirme en un padre lider para inspirar",
       imageUrl: `${getCloudinaryUrl(
         "10._cómo_convertirme_en_un_padre_coj0bj"
       )}`,

@@ -144,6 +144,7 @@ export default function ProgramsPresencialProducts() {
                     {card.buttonLinkFamily && (
                       <a
                         href={card.buttonLinkFamily}
+                        target="_blank"
                         className="inline-block m-8 px-8 py-1 rounded-xl text-[#006838] bg-white font-bold cursor-pointer"
                       >
                         {card.buttonTextFamily || "Quiero más Información"}
@@ -152,6 +153,7 @@ export default function ProgramsPresencialProducts() {
                     <div className=" ">
                       <a
                         href={card.buttonLinkTeachers || "/contacto"}
+                        target="_blank"
                         className=" relative inline-block z-10 m-8 px-8 py-1 rounded-lg text-[#006838] bg-white font-bold cursor-pointer z-20"
                       >
                         {card.buttonTextTeachers || "Quiero más Información"}

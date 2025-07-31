@@ -20,17 +20,18 @@ export default function PruebasPage() {
       imageUrl: `${getCloudinaryUrl("Comunicación_positiva_con_adolescentes")}`,
       comingSoon: false,
       productDescription: `
-      "Formación virtual de 10 horas para apoyar a padres, madres y maestros en su labor de acompañar y educar adolescentes en una manera eficaz y tranquila.
-      <p class="my-2 font-bold">Este curso  se realiza 3 veces al años con un acompañamiento semanal en Vivo durante dos meses.</p>
+      "Formación virtual de +10 horas para apoyar a padres, cuidadores, maestros y profesionales que trabajan con adolescentes en su labor de acompañarlos y educarlos de una manera más eficaz y tranquila.
+      <p class="my-2 ">Este curso  está disponible en nuestra biblioteca de Hotmart para que lo adquieras en cualquier momentoy lo hagas a tu ritmo (Acceso ilimitado)</p>
       `,
       productEspecifications: `
-      <ul class="list-disc pl-6">
-        <li>10 horas de formación</li>
-        <li>Cursos virtual con acompañamiento en Vivo </li>
-        <li> Este curso lo realizo 3 veces al año con un acompañamiento semanal en Vivo duración de dos meses.</li>
-        <li> Acceso a recursos y materiales especializados </li>
-        <li>Sesiones prácticas dinámicas </li>
-        <li>Certificado de participación </li>
+      <ul class="list-disc pl-6 mt-8">
+      <li>6 módulos con +40 lecciones</li>  
+      <li>Duración aproximada de dos meses</li>  
+      <li>Acceso a recursos y materiales descargables</li>  
+      <li>Sesiones prácticas con planes de trabajo</li>  
+      <li>Certificado de participación </li>
+      <li>Garantía de 7 días</li>
+      <li>Curso 100% virtual</li>      
       </ul>
       `,
 
@@ -96,7 +97,7 @@ export default function PruebasPage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100  text-white/90 font-book ">
       <div className="md:max-w-[900px] max-w-[90vw] mx-auto text-gray-600  ">
         <motion.h2
-          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mt-12 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838]  mt-24 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -114,15 +115,15 @@ export default function PruebasPage() {
         {/* <h1 className="text-center mt-16 mb-4 text-[#006838] font-extrabold md:text-4xl text-3xl font-heavy font-futura-pt">
           Productos digitales
         </h1> */}
-        <p className="text-center ">
+        <p className="text-center mt-12 ">
           Si eres padre, madre, cuidador, maestro o lideras una institucion
           educativa...
         </p>
-        <p className="bg-[#006838] text-white font-bold px-4 py-1 rounded-lg text-center my-2">
+        <p className="bg-[#006838] text-white font-bold px-4 py-1 rounded-lg text-center my-6">
           Quiero que trabajemos juntos para fortalecer tu familia y transformar
           nuestra sociedad
         </p>
-        <p className="text-center md:text-left">
+        <p className="text-center md:text-left mb-8">
           Acompañar la vida de un niño, niña o adolescente es una gran
           responsabilidad, y todo empieza por nosotros: El ejemplo da las
           lecciones más poderosas de la vida.
@@ -175,6 +176,7 @@ export default function PruebasPage() {
                   <div className="flex justify-end">
                     <a
                       href={card.buttonLink}
+                      target="_blank"
                       className="inline-block m-8 px-8 py-1 rounded-xl text-[#006838] bg-white font-bold"
                     >
                       {card.buttonText || "Quiero más Información"}

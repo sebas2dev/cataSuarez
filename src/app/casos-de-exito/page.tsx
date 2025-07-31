@@ -847,10 +847,9 @@ const CasosDeExito = () => {
       {/* Main Quote */}
       <MainQuote>
         Todos mis programas tienen más del 90% de satisfacción y muestran
-        impactos significativos en todas las evaluaciones que realizamos y
-        muestran impactos significativos en todas las evaluaciones que
-        realizamos. El reporte de la práctica del castigo físico lo hemos
-        disminuido hasta en un 30%”
+        impactos significativos en todas las evaluaciones que realizamos. El
+        reporte de la práctica del castigo físico lo hemos disminuido hasta en
+        un 30%”
       </MainQuote>
 
       {/* Grid Programs Section */}
@@ -859,7 +858,7 @@ const CasosDeExito = () => {
         {/* Added light bg for contrast */}
         <div className="container mx-auto px-4 md:px-8">
           <motion.h2
-            className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#80b0ab] text-center mb-8 md:mb-12"
+            className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] text-center mb-8 md:mb-12"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

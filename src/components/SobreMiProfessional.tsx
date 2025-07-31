@@ -237,17 +237,18 @@ const SobreMiProfessional = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5 }}
                     >
-                      Impacto Profesional
+                      {/* Impacto Profesional */}
                     </motion.h3>
-                    <motion.p
-                      className="text-lg md:text-xl font-book font-futura-pt text-white/90"
+                    <motion.h3
+                      className="text-2xl md:text-3xl font-book font-futura-pt text-white/90 font-bold"
                       initial={{ y: 20, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                      Transformando vidas a través de la educación
-                    </motion.p>
+                      Transformando vidas y comunidades a través de la
+                      psicología y la educación
+                    </motion.h3>
                   </div>
                 </motion.div>
 
@@ -339,7 +340,7 @@ const SobreMiProfessional = () => {
                 </motion.div>
 
                 <motion.div
-                  className="bg-[#5C8A3F] rounded-2xl shadow-2xl text-white relative overflow-hidden group cursor-pointer border-l-4 border-white hover:border-gray-200"
+                  className="bg-[#5C8A3F] rounded-2xl shadow-2xl text-stone-200 relative overflow-hidden group cursor-pointer border-l-4 border-white hover:border-gray-200"
                   whileHover={{ y: -5, scale: 1.01 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -352,25 +353,26 @@ const SobreMiProfessional = () => {
                       Conferenciasta en diferentes temas de crianza, desarrollo
                       humano, educación socioemocional, comunicación, liderazgo.
                       <br></br>He desarrollado contenidos virtuales de
-                      parentalidad positiva como la{" "}
-                      <strong className="text-neutral-800 ">
-                        serie de libros
+                      parentalidad positiva como la serie de libros:{" "}
+                      <strong className="text-lime-300 font-bold ">
+                        “Herramientas Prácticas de Crianza para…”{" "}
                       </strong>
-                      : “Herramientas Prácticas de Crianza para…” y el kit
-                      virtual:{" "}
-                      <strong className="text-neutral-800 ">
-                        “la Crianza Amorosa: un Regalo para la Vida” de la
-                        Corporación Red PaPaz.
+                      y el kit virtual:{" "}
+                      <strong className="text-lime-300 font-bold ">
+                        “la Crianza Amorosa: un Regalo para la Vida de la
+                        Corporación Red PaPaz”.
                       </strong>{" "}
                       &nbsp;
                     </p>
-                    <a
-                      href="https://crianzaamorosa.redpapaz.org"
-                      target="_blank"
-                      className="text-neutral-800 font-book font-futura-pt leading-relaxed text-lg md:text-lg hover:text-white hover:scale-105 transition"
-                    >
-                      https://crianzaamorosa.redpapaz.org
-                    </a>
+                    <div className="text-stone-700  mt-4  font-bold hover:scale-105 transition-transform duration-300">
+                      <a
+                        href="https://crianzaamorosa.redpapaz.org"
+                        target="_blank"
+                        className="  font-book font-futura-pt text-[#006838] text-lg md:text-lg bg-stone-200 p-2 rounded-lg"
+                      >
+                        Crianza Amorosa Red PaPaz
+                      </a>
+                    </div>
                   </div>
                 </motion.div>
 
@@ -420,7 +422,7 @@ const SobreMiProfessional = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-4xl md:text-5xl font-heavy font-futura-pt mb-4 text-[#006838] relative inline-block">
-                  Compromiso Social
+                  Compromiso Social y Comunitario
                   <motion.div
                     className="absolute -bottom-2 left-0 h-1 bg-[#98B475]"
                     initial={{ width: 0 }}
@@ -443,7 +445,7 @@ const SobreMiProfessional = () => {
                   <div className="relative p-8 md:p-10 border-l-4 border-[#006838]">
                     <div className="absolute inset-0 bg-[#006838]/5 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                     <div className="relative">
-                      <h4 className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#2A2A2A] mb-4 group-hover:text-[#006838] transition-colors duration-300">
+                      <h4 className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#006838] mb-4 group-hover:text-[#006838] transition-colors duration-300">
                         Impacto comunitario
                       </h4>
                       <p className="font-book font-futura-pt leading-relaxed text-lg text-[#2A2A2A]">
@@ -510,13 +512,14 @@ const SobreMiProfessional = () => {
                       {/* Impacto Social */}
                     </motion.h3>
                     <motion.p
-                      className="text-base md:text-lg font-book font-futura-pt text-white/90"
+                      className="text-base md:text-lg font-book font-futura-pt text-white/90 font-bold"
                       initial={{ y: 20, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                      Transformando comunidades a través de la educación
+                      {/* Transformando vidas y comunidades a través de la psicóloga
+                      y la educación */}
                     </motion.p>
                   </div>
                 </motion.div>

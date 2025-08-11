@@ -142,7 +142,7 @@ const About = () => {
                   EXPERIENCIA PROFESIONAL
                 </h3>
                 <p className="font-book font-futura-pt leading-relaxed text-base text-white/90 ">
-                  Desde los 19 años estoy trabajando con programas Sociales y
+                  Desde los 19 años estoy trabajando con programas sociales y
                   educativos de gran alcance. He trabajado en diferentes
                   contextos educativos y sociales, públicos, privados y
                   fundacionales.

@@ -402,7 +402,7 @@ const GridProgramCard: React.FC<GridProgramCardProps> = ({
         <div className="bg-gray-50 px-6 py-3 mt-auto text-center border-t border-gray-100">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-sm font-medium text-[#80b0ab] hover:text-[#006838] group-hover:font-semibold transition-all duration-200"
+            className="cursor-pointer text-sm font-medium text-[#80b0ab] hover:text-[#006838] group-hover:font-semibold transition-all duration-200 "
           >
             {isOpen ? "Ver menos" : "Ver más"}
           </button>
@@ -515,7 +515,7 @@ const CasosDeExito = () => {
         "El Programa fue creado y desarrollado para la Alcaldía de Barranquilla entre el 2020 y el 2023. Tiene una metodología adaptada del modelo de disciplina positiva con un componente virtual y presencial y un análisis de costo-beneficio para poder impactar a un gran número de familias en condición de vulnerabilidad. En este programa hemos impactado de manera directa más de 2.000 personas.",
       logo: "https://res.cloudinary.com/dqgqrvnnw/image/upload/q_auto:best,f_auto,w_400/v1746026927/images/padres-primera-logo.png",
       videoId: "ESS2hqu7x9s",
-      websiteUrl: "www.padresdeprimera.com",
+      websiteUrl: "https://www.padresdeprimera.com",
       socialLinks: {
         // facebook: "https://www.facebook.com/padresdeprimerabaq",
         instagram: "https://www.instagram.com/padresdeprimerabaq",

@@ -1,25 +1,41 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube, FaFacebook, FaTiktok } from 'react-icons/fa';
-import { HiMail } from 'react-icons/hi';
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaYoutube,
+  FaFacebook,
+  FaTiktok,
+} from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 const slugify = (text: string) => {
   const accentMap: { [key: string]: string } = {
-    'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-    'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
-    'ñ': 'n', 'Ñ': 'N'
+    á: "a",
+    é: "e",
+    í: "i",
+    ó: "o",
+    ú: "u",
+    Á: "A",
+    É: "E",
+    Í: "I",
+    Ó: "O",
+    Ú: "U",
+    ñ: "n",
+    Ñ: "N",
   };
   return text
     .toString()
     .toLowerCase()
     .replace(/[áéíóúÁÉÍÓÚñÑ]/g, (match) => accentMap[match] || match)
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/[^\w-]+/g, '') // Remove all non-word chars
-    .replace(/--+/g, '-') // Replace multiple - with single -
-    .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-*$/, ''); // Trim - from end of text
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\w-]+/g, "") // Remove all non-word chars
+    .replace(/--+/g, "-") // Replace multiple - with single -
+    .replace(/^-+/, "") // Trim - from start of text
+    .replace(/-*$/, ""); // Trim - from end of text
 };
 
 const Footer = () => {
@@ -33,7 +49,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-futura-pt font-heavy mb-6 relative inline-block">
               Contacto
-              <motion.span 
+              <motion.span
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#006838]"
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
@@ -45,25 +61,25 @@ const Footer = () => {
                 <span className="w-1 h-1 rounded-full bg-[#006838]" />
                 Barranquilla, Colombia
               </p>
-              <a 
-                href="mailto:catasuarezeducacion@gmail.com" 
+              <a
+                href="mailto:equipo@catasuarezeducacion.com"
                 className="flex items-center gap-2 hover:text-[#006838] transition-colors duration-300 group"
               >
                 <span className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#006838] group-hover:bg-[#006838] transition-all duration-300">
                   <HiMail className="text-lg group-hover:text-white" />
                 </span>
-                catasuarezeducacion@gmail.com
+                equipo@catasuarezeducacion.com
               </a>
-              <a 
-                href="https://wa.me/573132933130" 
-                target="_blank" 
+              <a
+                href="https://wa.me/573102122466"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#006838] transition-colors duration-300 group"
               >
                 <span className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#006838] group-hover:bg-[#006838] transition-all duration-300">
                   <FaWhatsapp className="text-lg group-hover:text-white" />
                 </span>
-                +57 313 293 3130
+                +57 310 212 2466
               </a>
             </div>
           </div>
@@ -72,7 +88,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-futura-pt font-heavy mb-6 relative inline-block">
               Navegación
-              <motion.span 
+              <motion.span
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#006838]"
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
@@ -80,14 +96,20 @@ const Footer = () => {
               />
             </h3>
             <nav className="space-y-3 font-futura-pt font-book">
-              {['Inicio', 'Sobre mí', 'Casos de éxito', 'Programas', 'Contacto'].map((item) => (
-                <Link 
+              {[
+                "Inicio",
+                "Sobre mí",
+                "Casos de éxito",
+                "Programas",
+                "Contacto",
+              ].map((item) => (
+                <Link
                   key={item}
-                  href={item === 'Inicio' ? '/' : `/${slugify(item)}`}
+                  href={item === "Inicio" ? "/" : `/${slugify(item)}`}
                   className="block hover:text-[#006838] transition-colors duration-300 relative group"
                 >
                   <span className="relative z-10">{item}</span>
-                  <motion.span 
+                  <motion.span
                     className="absolute left-0 bottom-0 h-[1px] bg-[#006838]/50"
                     initial={{ width: "0%" }}
                     whileHover={{ width: "100%" }}
@@ -102,7 +124,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-futura-pt font-heavy mb-6 relative inline-block">
               Sígueme
-              <motion.span 
+              <motion.span
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#006838]"
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
@@ -110,7 +132,7 @@ const Footer = () => {
               />
             </h3>
             <div className="flex items-center gap-4">
-              <a 
+              <a
                 href="https://www.instagram.com/catasuarezeducacion"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -118,7 +140,7 @@ const Footer = () => {
               >
                 <FaInstagram className="text-xl group-hover:text-white" />
               </a>
-              <a 
+              <a
                 href="https://www.facebook.com/share/ReZFk9ZBQrzSofF2/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -126,7 +148,7 @@ const Footer = () => {
               >
                 <FaFacebook className="text-xl group-hover:text-white" />
               </a>
-              <a 
+              <a
                 href="https://www.linkedin.com/in/catalina-su%C3%A1rez-p%C3%A9rez-25337914a"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -134,7 +156,7 @@ const Footer = () => {
               >
                 <FaLinkedinIn className="text-xl group-hover:text-white" />
               </a>
-              <a 
+              <a
                 href="https://youtube.com/@catasuarez6063"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -142,7 +164,7 @@ const Footer = () => {
               >
                 <FaYoutube className="text-xl group-hover:text-white" />
               </a>
-              <a 
+              <a
                 href="https://www.tiktok.com/@catasuarezeducacion"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -153,7 +175,7 @@ const Footer = () => {
             </div>
             <h4 className="text-lg font-futura-pt font-heavy relative inline-block">
               Horario de Atención
-              <motion.span 
+              <motion.span
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#006838]"
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
@@ -177,19 +199,25 @@ const Footer = () => {
         <div className="pt-8 border-t border-[#006838]/20 text-center text-sm font-futura-pt font-book text-white/60">
           <p>© {currentYear} Cata Suárez. Todos los derechos reservados.</p>
           <p className="mt-2">
-            <Link href="/privacidad" className="hover:text-[#006838] transition-colors duration-300 relative group">
+            <Link
+              href="/privacidad"
+              className="hover:text-[#006838] transition-colors duration-300 relative group"
+            >
               Política de Privacidad
-              <motion.span 
+              <motion.span
                 className="absolute left-0 bottom-0 h-[1px] bg-[#006838]/50"
                 initial={{ width: "0%" }}
                 whileHover={{ width: "100%" }}
                 transition={{ duration: 0.3 }}
               />
             </Link>
-            {' · '}
-            <Link href="/terminos" className="hover:text-[#006838] transition-colors duration-300 relative group">
+            {" · "}
+            <Link
+              href="/terminos"
+              className="hover:text-[#006838] transition-colors duration-300 relative group"
+            >
               Términos y Condiciones
-              <motion.span 
+              <motion.span
                 className="absolute left-0 bottom-0 h-[1px] bg-[#006838]/50"
                 initial={{ width: "0%" }}
                 whileHover={{ width: "100%" }}
@@ -203,4 +231,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

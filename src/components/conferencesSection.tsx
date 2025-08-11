@@ -43,7 +43,7 @@ export default function ConferencesSection() {
   return (
     <div className="max-w-[900px] mx-auto px-4 py-4 text-gray-600">
       <motion.h2
-        className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] my-16 mb-4 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+        className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] my-16 text-center relative inline-block left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

@@ -17,7 +17,8 @@ export default function PruebasPage() {
     {
       tag: "Curso Virtual",
       title: "COMUNICACIóN POSITIVA CON ADOLESCENTES",
-      imageUrl: `${getCloudinaryUrl("Comunicación_positiva_con_adolescentes")}`,
+      imageUrl:
+        "https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921918/pexels-anastasia-shuraeva-5124523_1_sdns8a_c_crop_w_1800_h_3000_g_auto_deoeqx.jpg",
       comingSoon: false,
       productDescription: `
       "Formación virtual de +10 horas para apoyar a padres, cuidadores, maestros y profesionales que trabajan con adolescentes en su labor de acompañarlos y educarlos de una manera más eficaz y tranquila.

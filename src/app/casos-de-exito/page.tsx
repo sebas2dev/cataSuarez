@@ -601,7 +601,7 @@ const CasosDeExito = () => {
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
-              src={getCloudinaryUrl("/images/casos-hero.png")}
+              src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
               alt="Casos de Éxito"
               fill
               className="object-cover object-[70%_35%] md:object-[center_15%]"

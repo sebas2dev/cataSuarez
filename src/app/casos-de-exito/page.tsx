@@ -604,10 +604,11 @@ const CasosDeExito = () => {
               src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
               alt="Casos de Éxito"
               fill
-              className="object-cover object-[70%_35%] md:object-[center_15%]"
+              className="object-cover object-[75%_40%] md:object-[center_15%]  "
               quality={100}
               priority
             />
+            <div className="absolute inset-0 bg-black/30"></div>
           </motion.div>
         </motion.div>
 
@@ -669,7 +670,7 @@ const CasosDeExito = () => {
                     >
                       <p
                         // Responsive text size
-                        className={`text-5xl md:text-7xl font-futura-pt ${
+                        className={`text-4xl md:text-7xl font-futura-pt ${
                           index === 2
                             ? "font-heavy text-[#98b475]"
                             : "font-light text-white/90"
@@ -803,14 +804,14 @@ const CasosDeExito = () => {
       {/* Standalone Video Section */}
       <section className="pt-12 md:py-16">
         <motion.h2
-          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mb-12 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+          className="text-2xl md:text-3xl max-w-[700px] font-heavy font-futura-pt text-[#006838] mb-12 text-center relative inline-block left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          DEL CASTIGO FÍSICO AL AMOR FAMILIAR:<br></br> LA VERDADERA
-          TRANSFORMACIÓN SOCIAL
+          DEL CASTIGO FÍSICO AL AMOR FAMILIAR: LA VERDADERA TRANSFORMACIÓN
+          SOCIAL
           <motion.div
             className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
             initial={{ scaleX: 0 }}
@@ -867,7 +868,7 @@ const CasosDeExito = () => {
             Casos de Éxito Destacados
           </motion.h2>
           <motion.p
-            className="text-gray-700 mb-4 md:mb-6 max-w-[900px] mx-auto text-base md:text-lg font-book font-futura-pt"
+            className=" text-center md:text-left text-gray-700 mb-4 md:mb-6 max-w-[900px] mx-auto text-base md:text-lg font-book font-futura-pt"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

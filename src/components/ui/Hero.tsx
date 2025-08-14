@@ -119,7 +119,7 @@ const Hero = () => {
                   animate: { opacity: 1, y: 0 },
                   transition: { duration: 1, delay: 0.8, ease: "easeOut" },
                 })}
-            className="text-base md:text-lg font-book font-futura-pt leading-relaxed text-white/90 max-w-[90%] md:max-w-full mb-8"
+            className="text-base md:text-lg font-book font-futura-pt leading-relaxed text-white/90 max-w-[60%] md:max-w-full mb-8"
           >
             <span className="text-[#98b475] font-semibold">
               El punto de partida de un educador exitoso comienza consigo mismo.

@@ -252,10 +252,11 @@ const Programas = () => {
               src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746046767/3_cejb0v.png"
               alt="Programas Hero"
               fill
-              className="object-cover object-[70%_35%] md:object-center"
+              className="object-cover object-[70%_35%] md:object-center "
               quality={100}
               priority
             />
+            <div className="absolute inset-0 bg-black/30"></div>
           </motion.div>
         </motion.div>
 
@@ -300,7 +301,7 @@ const Programas = () => {
                 </motion.h1>
 
                 <motion.p
-                  className="text-base md:text-xl font-book font-futura-pt text-white/90 max-w-md md:max-w-xl"
+                  className="text-base md:text-xl font-book font-futura-pt text-white/90  max-w-[65%] md:max-w-xl"
                   {...(isTouch
                     ? {
                         ...mobileAnimationProps,

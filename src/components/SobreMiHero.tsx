@@ -29,7 +29,7 @@ const SobreMiHero = () => {
           src={getCloudinaryUrl("/images/5.png")}
           alt="Cata Suarez Background"
           fill
-          className="object-cover object-[80%_40%] md:object-[center_40%] scale-110"
+          className="object-cover object-[80%_40%] md:object-[center_40%] scale-110 md:opacity-100 opacity-10"
           quality={100}
           sizes="100vw"
           priority

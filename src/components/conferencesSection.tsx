@@ -83,7 +83,7 @@ export default function ConferencesSection() {
         </li>
       </ol>
       <div className="flex flex-col md:flex-row gap-8 my-8">
-        <div className=" w-[95%] h-80  md:h-auto md:w-[50%] relative m-8">
+        <div className=" w-[95%] h-80  md:h-auto md:w-[50%] relative mx-auto my-8 md:m-8">
           <Image
             src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746027045/images/maestros-primera-2.jpg"
             fill

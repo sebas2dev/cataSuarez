@@ -50,8 +50,8 @@ const SobreMiEducation = () => {
             src={getCloudinaryUrl("/images/RBS_3576.jpg")}
             alt="Education Hero"
             fill
-            className="object-cover transform -scale-x-100"
-            style={{ objectPosition: heroConfig.imagePosition }}
+            className="object-cover transform md:-scale-x-100  object-[65%_75%] md:object-[15%_34%]"
+            // style={{ objectPosition: heroConfig.imagePosition }}
             quality={90}
             priority
           />
@@ -63,7 +63,7 @@ const SobreMiEducation = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="ml-0 md:ml-auto max-w-[90%] md:max-w-2xl"
+              className="ml-0 md:ml-auto max-w-[70%]  md:max-w-2xl"
             >
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-heavy font-futura-pt mb-4 text-white">
                 Formación académica

@@ -151,7 +151,7 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            <div className="mt-12">
+            <div className=" flex justify-center mt-12 md:justify-start ">
               <AnimatedButton href="/sobre-mi" text="Sobre mí" />
             </div>
           </motion.div>
@@ -234,8 +234,9 @@ const About = () => {
                 &rdquo;
               </motion.span>
             </motion.div>
-
-            <AnimatedButton href="/casos-de-exito" text="Casos de éxito" />
+            <div className="flex justify-center md:justify-start">
+              <AnimatedButton href="/casos-de-exito" text="Casos de éxito" />
+            </div>
           </motion.div>
 
           <motion.div
@@ -326,8 +327,9 @@ const About = () => {
               Metodologías probadas que combinan teoría y práctica para
               resultados transformadores y duraderos.
             </motion.p>
-
-            <AnimatedButton href="/programas" text="Programas" />
+            <div className="flex justify-center md:justify-start">
+              <AnimatedButton href="/programas" text="Programas" />
+            </div>
           </motion.div>
         </div>
       </div>

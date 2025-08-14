@@ -1,13 +1,19 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { getCloudinaryUrl } from '@/utils/cloudinary';
+import Image from "next/image";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValueEvent,
+} from "framer-motion";
+import { useEffect, useState } from "react";
+import { getCloudinaryUrl } from "@/utils/cloudinary";
 
 const SobreMiHero = () => {
   const { scrollY } = useScroll();
-  
+
   // Gentler spring physics
   // const smoothScrollY = useSpring(scrollY, {
   //   stiffness: 50,
@@ -26,7 +32,7 @@ const SobreMiHero = () => {
 
   // Detect touch device
   useEffect(() => {
-    setIsTouch('ontouchstart' in window);
+    setIsTouch("ontouchstart" in window);
   }, []);
 
   // Track scroll for mobile-specific animations
@@ -37,12 +43,12 @@ const SobreMiHero = () => {
   const mobileAnimationProps = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { 
+    transition: {
       type: "spring",
       stiffness: 100,
       damping: 20,
-      mass: 0.5
-    }
+      mass: 0.5,
+    },
   };
   // --- End Mobile Specific Logic ---
 
@@ -57,11 +63,11 @@ const SobreMiHero = () => {
       <motion.div
         className="absolute inset-0"
         style={{
-          scale: isTouch ? mobileScale : undefined
+          scale: isTouch ? mobileScale : undefined,
         }}
       >
         <Image
-          src={getCloudinaryUrl('/images/5.png')}
+          src={getCloudinaryUrl("/images/5.png")}
           alt="Cata Suarez Background"
           fill
           className="object-cover object-[70%_35%] md:object-[center_40%]"
@@ -73,18 +79,18 @@ const SobreMiHero = () => {
 
       {/* Content */}
       <div className="relative container mx-auto px-6 md:pl-[8%] md:pr-[20%] h-screen flex flex-col justify-center">
-        <motion.div 
-          className="max-w-5xl text-white"
-        >
+        <motion.div className="max-w-5xl text-white">
           <motion.div
             className="mb-8 md:mb-12"
-            {...(isTouch ? mobileAnimationProps : {
-              initial: { opacity: 0, y: 20 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 0.8, delay: 0.2 }
-            })}
+            {...(isTouch
+              ? mobileAnimationProps
+              : {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.8, delay: 0.2 },
+                })}
           >
-            <motion.div 
+            <motion.div
               className="h-0.5 w-16 md:w-24 bg-[#98B475] mb-4 md:mb-6"
               initial={{ width: 0 }}
               animate={{ width: isTouch ? 64 : 96 }}
@@ -97,28 +103,45 @@ const SobreMiHero = () => {
 
           <motion.div
             className="mb-8 md:mb-12"
-            {...(isTouch ? { ...mobileAnimationProps, transition: { ...mobileAnimationProps.transition, delay: 0.2 } } : {
-              initial: { opacity: 0, y: 20 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 0.8, delay: 0.4 }
-            })}
+            {...(isTouch
+              ? {
+                  ...mobileAnimationProps,
+                  transition: {
+                    ...mobileAnimationProps.transition,
+                    delay: 0.2,
+                  },
+                }
+              : {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.8, delay: 0.4 },
+                })}
           >
             <p className="text-xl md:text-3xl font-heavy font-futura-pt leading-tight mb-2">
-              &ldquo;Siempre, siempre, siempre me ha gustado trabajar por la gente y con la gente.&rdquo;
+              &ldquo;Siempre, siempre, siempre me ha gustado trabajar por la
+              gente y con la gente.&rdquo;
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
             <motion.div
-              {...(isTouch ? { ...mobileAnimationProps, transition: { ...mobileAnimationProps.transition, delay: 0.4 } } : {
-                initial: { opacity: 0, x: -20 },
-                animate: { opacity: 1, x: 0 },
-                transition: { duration: 0.8, delay: 0.6 }
-              })}
+              {...(isTouch
+                ? {
+                    ...mobileAnimationProps,
+                    transition: {
+                      ...mobileAnimationProps.transition,
+                      delay: 0.4,
+                    },
+                  }
+                : {
+                    initial: { opacity: 0, x: -20 },
+                    animate: { opacity: 1, x: 0 },
+                    transition: { duration: 0.8, delay: 0.6 },
+                  })}
               className="relative aspect-[4/5] md:aspect-[3/4] w-full max-w-full md:max-w-sm mx-auto"
             >
               <Image
-                src={getCloudinaryUrl('/IMG_1980_jkklvm.jpg')}
+                src={getCloudinaryUrl("/IMG_1980_jkklvm.jpg")}
                 alt="Cata Suárez en su biblioteca"
                 fill
                 className="object-cover rounded-lg"
@@ -129,18 +152,33 @@ const SobreMiHero = () => {
 
             <motion.div
               className="space-y-6 md:space-y-8"
-              {...(isTouch ? { ...mobileAnimationProps, transition: { ...mobileAnimationProps.transition, delay: 0.6 } } : {
-                initial: { opacity: 0, x: 20 },
-                animate: { opacity: 1, x: 0 },
-                transition: { duration: 0.8, delay: 0.8 }
-              })}
+              {...(isTouch
+                ? {
+                    ...mobileAnimationProps,
+                    transition: {
+                      ...mobileAnimationProps.transition,
+                      delay: 0.6,
+                    },
+                  }
+                : {
+                    initial: { opacity: 0, x: 20 },
+                    animate: { opacity: 1, x: 0 },
+                    transition: { duration: 0.8, delay: 0.8 },
+                  })}
             >
               <div>
                 <h2 className="text-xl md:text-2xl font-heavy font-futura-pt mb-3 md:mb-4">
                   Un camino misional
                 </h2>
                 <p className="font-book font-futura-pt leading-relaxed text-sm md:text-base text-white/90">
-                  A los 19 años fui voluntaria por un año de un proyecto social y educativo en el centro de México. Trabajé como psicóloga del colegio Vermont de Medellín y con la Presidencia de Colombia en programas de desarrollo alternativo, con grupos de campesinos, indígenas y afrodescendientes involucrados en el negocio de las drogas ilícitas. Luego volví a la educación y trabajé con fundaciones para la promoción de la primera infancia.
+                  A los 19 años fui voluntaria por un año de un proyecto social
+                  y educativo en el centro de México. Trabajé como psicóloga del
+                  colegio Vermont de Medellín y con la Presidencia de Colombia
+                  en programas de desarrollo alternativo, con grupos de
+                  campesinos, indígenas y afrodescendientes involucrados en el
+                  negocio de las drogas ilícitas. Luego volví a la educación y
+                  trabajé con fundaciones para la promoción de la primera
+                  infancia.
                 </p>
               </div>
 
@@ -149,7 +187,12 @@ const SobreMiHero = () => {
                   El día que mi vida cambió
                 </h2>
                 <p className="font-book font-futura-pt leading-relaxed text-sm md:text-base text-white/90">
-                  Cuando nació mi hijo sietemesino, con varios retos en su desarrollo motor, descubrí que mi gran misión es enseñar a padres y maestros la magia de educar amorosa y efectivamente y me comprometí con esta gran labor de trabajar para prevenir los malos tratos a la infancia y la adolescencia y cambiar los modelos.
+                  Cuando nació mi hijo sietemesino, con varios retos en su
+                  desarrollo motor, descubrí que mi gran misión es enseñar a
+                  padres y maestros la magia de educar amorosa y efectivamente y
+                  me comprometí con esta gran labor de trabajar para prevenir
+                  los malos tratos a la infancia y la adolescencia y cambiar los
+                  modelos.
                 </p>
               </div>
             </motion.div>
@@ -173,7 +216,11 @@ const SobreMiHero = () => {
             <motion.div
               className="w-1 h-2 bg-white/80 rounded-full"
               animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
             />
           </motion.div>
           <motion.span
@@ -189,4 +236,4 @@ const SobreMiHero = () => {
   );
 };
 
-export default SobreMiHero; 
+export default SobreMiHero;

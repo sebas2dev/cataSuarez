@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import LogoCarousel from "./ui/LogoCarousel";
-import { getCloudinaryUrl } from "@/utils/cloudinary";
 
 const SobreMiEducation = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -47,10 +46,10 @@ const SobreMiEducation = () => {
       >
         <div className="relative w-full h-full">
           <Image
-            src={getCloudinaryUrl("/images/RBS_3576.jpg")}
+            src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
             alt="Education Hero"
             fill
-            className="object-cover transform md:-scale-x-100  object-[65%_75%] md:object-[15%_34%]"
+            className="object-cover transform md:-scale-x-100  object-[65%_75%] md:object-[15%_24%]"
             // style={{ objectPosition: heroConfig.imagePosition }}
             quality={90}
             priority

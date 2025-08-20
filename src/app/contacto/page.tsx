@@ -17,89 +17,90 @@ import {
   FaYoutube,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import ContactForm from "@/components/ContactForm";
 
-const ContactInput = ({
-  label,
-  type,
-  value,
-  onChange,
-  required = true,
-  as = "input",
-}: {
-  label: string;
-  type?: string;
-  value: string;
-  onChange: (value: string) => void;
-  required?: boolean;
-  as?: "input" | "textarea" | "select";
-}) => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [hasValue, setHasValue] = useState(false);
+// const ContactInput = ({
+//   label,
+//   type,
+//   value,
+//   onChange,
+//   required = true,
+//   as = "input",
+// }: {
+//   label: string;
+//   type?: string;
+//   value: string;
+//   onChange: (value: string) => void;
+//   required?: boolean;
+//   as?: "input" | "textarea" | "select";
+// }) => {
+//   const [isFocused, setIsFocused] = useState(false);
+//   const [hasValue, setHasValue] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    onChange(e.target.value);
-    setHasValue(e.target.value.length > 0);
-  };
+//   const handleChange = (
+//     e: React.ChangeEvent<
+//       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+//     >
+//   ) => {
+//     onChange(e.target.value);
+//     setHasValue(e.target.value.length > 0);
+//   };
 
-  return (
-    <motion.div
-      className="relative mb-4 md:mb-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      <label
-        className={`absolute left-3 transition-all duration-300 pointer-events-none font-futura-pt font-book
-          ${
-            isFocused || hasValue
-              ? "text-xs -top-2 bg-white px-2 text-[#006838]"
-              : "text-gray-500 top-3"
-          }`}
-      >
-        {label}
-      </label>
-      {as === "select" ? (
-        <select
-          value={value}
-          onChange={handleChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          required={required}
-          className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-[#006838] font-futura-pt font-book bg-white transition-all duration-300 text-sm md:text-base"
-        >
-          <option value="padre">Padre/Madre</option>
-          <option value="educador">Educador</option>
-          <option value="otro">Otro</option>
-        </select>
-      ) : as === "textarea" ? (
-        <textarea
-          value={value}
-          onChange={handleChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          required={required}
-          rows={4}
-          className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-[#006838] font-futura-pt font-book resize-none transition-all duration-300 text-sm md:text-base"
-        />
-      ) : (
-        <input
-          type={type}
-          value={value}
-          onChange={handleChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          required={required}
-          className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-[#006838] font-futura-pt font-book transition-all duration-300 text-sm md:text-base"
-        />
-      )}
-    </motion.div>
-  );
-};
+//   return (
+//     <motion.div
+//       className="relative mb-4 md:mb-6"
+//       initial={{ opacity: 0, y: 20 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.5 }}
+//     >
+//       <label
+//         className={`absolute left-3 transition-all duration-300 pointer-events-none font-futura-pt font-book
+//           ${
+//             isFocused || hasValue
+//               ? "text-xs -top-2 bg-white px-2 text-[#006838]"
+//               : "text-gray-500 top-3"
+//           }`}
+//       >
+//         {label}
+//       </label>
+//       {as === "select" ? (
+//         <select
+//           value={value}
+//           onChange={handleChange}
+//           onFocus={() => setIsFocused(true)}
+//           onBlur={() => setIsFocused(false)}
+//           required={required}
+//           className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-[#006838] font-futura-pt font-book bg-white transition-all duration-300 text-sm md:text-base"
+//         >
+//           <option value="padre">Padre/Madre</option>
+//           <option value="educador">Educador</option>
+//           <option value="otro">Otro</option>
+//         </select>
+//       ) : as === "textarea" ? (
+//         <textarea
+//           value={value}
+//           onChange={handleChange}
+//           onFocus={() => setIsFocused(true)}
+//           onBlur={() => setIsFocused(false)}
+//           required={required}
+//           rows={4}
+//           className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-[#006838] font-futura-pt font-book resize-none transition-all duration-300 text-sm md:text-base"
+//         />
+//       ) : (
+//         <input
+//           type={type}
+//           value={value}
+//           onChange={handleChange}
+//           onFocus={() => setIsFocused(true)}
+//           onBlur={() => setIsFocused(false)}
+//           required={required}
+//           className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-[#006838] font-futura-pt font-book transition-all duration-300 text-sm md:text-base"
+//         />
+//       )}
+//     </motion.div>
+//   );
+// };
 
 const ContactLink = ({
   icon: Icon,
@@ -161,19 +162,19 @@ const Contacto = () => {
     },
   };
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    type: "padre",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   message: "",
+  //   type: "padre",
+  // });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic will be implemented later
-    console.log("Form submitted:", formData);
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Form submission logic will be implemented later
+  //   console.log("Form submitted:", formData);
+  // };
 
   return (
     <main className="min-h-screen bg-white">
@@ -377,7 +378,9 @@ const Contacto = () => {
                   Envíame un mensaje
                 </motion.h2>
 
-                <form
+                <ContactForm />
+
+                {/* <form
                   onSubmit={handleSubmit}
                   className="space-y-1 md:space-y-2"
                 >
@@ -444,7 +447,7 @@ const Contacto = () => {
                       exit={{ scale: 0.9, opacity: 0 }}
                     />
                   </motion.button>
-                </form>
+                </form> */}
               </div>
             </motion.div>
           </div>

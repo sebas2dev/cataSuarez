@@ -12,6 +12,7 @@ import Image from "next/image";
 import ProgramsDigitalProducts from "@/components/ProgramsDigitalProducts";
 import ProgramsPresencialProducts from "@/components/ProgramsPresencialProducts";
 import ConferencesSection from "@/components/conferencesSection";
+import Head from "next/head";
 
 // const ProgramCard = ({
 //   title,
@@ -228,149 +229,178 @@ const Programas = () => {
   };
 
   return (
-    <motion.main
-      className="min-h-screen bg-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
-      {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            scale: isTouch ? mobileScale : undefined,
-          }}
-        >
+    <>
+      <Head>
+        <title>Cata Suárez | Talleres, Diplomados y Conferencias</title>
+        <meta
+          name="description"
+          content="Formación práctica para padres, docentes y organizaciones. Programas de Cata Suárez en crianza positiva, habilidades socioemocionales y liderazgo."
+        />
+        <meta
+          property="og:title"
+          content="Cata Suárez | Talleres, Diplomados y Conferencias"
+        />
+        <meta
+          property="og:description"
+          content="Formación práctica para padres, docentes y organizaciones. Programas de Cata Suárez en crianza positiva, habilidades socioemocionales y liderazgo."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://catasuarezeducacion.com/programas"
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
+        />
+      </Head>
+      <motion.main
+        className="min-h-screen bg-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Hero Section */}
+        <section className="relative h-screen overflow-hidden">
           <motion.div
             className="absolute inset-0"
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              scale: isTouch ? mobileScale : undefined,
+            }}
           >
-            <Image
-              src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746046767/3_cejb0v.png"
-              alt="Programas Hero"
-              fill
-              className="object-cover object-[70%_35%] md:object-center "
-              quality={100}
-              priority
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
+            <motion.div
+              className="absolute inset-0"
+              initial={{ scale: 1.1, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Image
+                src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746046767/3_cejb0v.png"
+                alt="Programas Hero"
+                fill
+                className="object-cover object-[70%_35%] md:object-center "
+                quality={100}
+                priority
+              />
+              <div className="absolute inset-0 bg-black/30"></div>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        <div className="relative h-full flex flex-col justify-center">
-          <div className="container mx-auto px-6 md:px-8">
-            <div className="max-w-[800px]">
-              <motion.div
-                className="overflow-hidden mb-4 md:mb-6"
-                {...(isTouch
-                  ? mobileAnimationProps
-                  : {
-                      initial: { opacity: 0, y: 20 },
-                      animate: { opacity: 1, y: 0 },
-                      transition: { duration: 1.2, delay: 0.8 },
-                    })}
-              >
-                <p className="text-white/70 font-futura-pt font-book tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm">
-                  Nuestros Programas
-                </p>
-              </motion.div>
-
-              <div className="space-y-4 md:space-y-6">
-                <motion.h1
-                  className="text-5xl md:text-8xl font-futura-pt font-heavy text-white leading-[1.1] tracking-tight"
+          <div className="relative h-full flex flex-col justify-center">
+            <div className="container mx-auto px-6 md:px-8">
+              <div className="max-w-[800px]">
+                <motion.div
+                  className="overflow-hidden mb-4 md:mb-6"
                   {...(isTouch
-                    ? {
-                        ...mobileAnimationProps,
-                        transition: {
-                          ...mobileAnimationProps.transition,
-                          delay: 0.2,
-                        },
-                      }
+                    ? mobileAnimationProps
                     : {
-                        initial: { opacity: 0, y: 40 },
+                        initial: { opacity: 0, y: 20 },
                         animate: { opacity: 1, y: 0 },
-                        transition: { duration: 1.2, delay: 1 },
+                        transition: { duration: 1.2, delay: 0.8 },
                       })}
                 >
-                  Transformando
-                  <br />
-                  Vidas
-                </motion.h1>
+                  <p className="text-white/70 font-futura-pt font-book tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm">
+                    Nuestros Programas
+                  </p>
+                </motion.div>
 
-                <motion.p
-                  className="text-base md:text-xl font-book font-futura-pt text-white/90  max-w-[65%] md:max-w-xl"
-                  {...(isTouch
-                    ? {
-                        ...mobileAnimationProps,
-                        transition: {
-                          ...mobileAnimationProps.transition,
-                          delay: 0.4,
-                        },
-                      }
-                    : {
-                        initial: { opacity: 0, y: 40 },
-                        animate: { opacity: 1, y: 0 },
-                        transition: { duration: 1.2, delay: 1.2 },
-                      })}
-                >
-                  Programas especializados diseñados para padres, educadores y
-                  profesionales, enfocados en el desarrollo integral y la
-                  transformación positiva.
-                </motion.p>
+                <div className="space-y-4 md:space-y-6">
+                  <motion.h1
+                    className="text-5xl md:text-8xl font-futura-pt font-heavy text-white leading-[1.1] tracking-tight"
+                    {...(isTouch
+                      ? {
+                          ...mobileAnimationProps,
+                          transition: {
+                            ...mobileAnimationProps.transition,
+                            delay: 0.2,
+                          },
+                        }
+                      : {
+                          initial: { opacity: 0, y: 40 },
+                          animate: { opacity: 1, y: 0 },
+                          transition: { duration: 1.2, delay: 1 },
+                        })}
+                  >
+                    Transformando
+                    <br />
+                    Vidas
+                  </motion.h1>
+
+                  <motion.p
+                    className="text-base md:text-xl font-book font-futura-pt text-white/90  max-w-[65%] md:max-w-xl"
+                    {...(isTouch
+                      ? {
+                          ...mobileAnimationProps,
+                          transition: {
+                            ...mobileAnimationProps.transition,
+                            delay: 0.4,
+                          },
+                        }
+                      : {
+                          initial: { opacity: 0, y: 40 },
+                          animate: { opacity: 1, y: 0 },
+                          transition: { duration: 1.2, delay: 1.2 },
+                        })}
+                  >
+                    Programas especializados diseñados para padres, educadores y
+                    profesionales, enfocados en el desarrollo integral y la
+                    transformación positiva.
+                  </motion.p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {isTouch && (
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
+          {isTouch && (
             <motion.div
-              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.5 }}
             >
               <motion.div
-                className="w-1 h-2 bg-white/80 rounded-full"
-                animate={{ y: [0, 4, 0] }}
+                className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2"
+                animate={{ y: [0, 10, 0] }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
-              />
+              >
+                <motion.div
+                  className="w-1 h-2 bg-white/80 rounded-full"
+                  animate={{ y: [0, 4, 0] }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                />
+              </motion.div>
+              <motion.span
+                className="text-white/60 text-xs md:text-sm mt-2 font-futura-pt font-book"
+                animate={{ opacity: [0.6, 1, 0.6] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              >
+                Desliza hacia abajo
+              </motion.span>
             </motion.div>
-            <motion.span
-              className="text-white/60 text-xs md:text-sm mt-2 font-futura-pt font-book"
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-            >
-              Desliza hacia abajo
-            </motion.span>
-          </motion.div>
-        )}
-      </section>
-      <div>
-        <ProgramsDigitalProducts />
-        <ProgramsPresencialProducts />
-        <ConferencesSection />
-      </div>
+          )}
+        </section>
+        <div>
+          <ProgramsDigitalProducts />
+          <ProgramsPresencialProducts />
+          <ConferencesSection />
+        </div>
 
-      {/* </section> */}
+        {/* </section> */}
 
-      {/* Call to Action */}
-      {/* <section className="py-16 md:py-24 bg-[#006838]/5">
+        {/* Call to Action */}
+        {/* <section className="py-16 md:py-24 bg-[#006838]/5">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             className="text-center max-w-3xl mx-auto"
@@ -395,7 +425,8 @@ const Programas = () => {
           </motion.div>
         </div>
       </section> */}
-    </motion.main>
+      </motion.main>
+    </>
   );
 };
 

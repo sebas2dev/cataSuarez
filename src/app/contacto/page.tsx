@@ -18,6 +18,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
+import Head from "next/head";
 
 // const ContactInput = ({
 //   label,
@@ -177,210 +178,240 @@ const Contacto = () => {
   // };
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section - MODIFIED FOR TWO COLUMNS */}
-      <motion.section
-        className="relative min-h-screen md:h-screen flex flex-col md:flex-row overflow-hidden bg-[#F0F3EE]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4 }}
-      >
-        {/* Left Column (Text & Background) */}
-        <div className="w-full md:w-1/2 lg:w-3/5 bg-[#F0F3EE] p-8 sm:p-12 md:p-16 lg:p-24 flex flex-col justify-center order-2 md:order-1">
-          <motion.div
-            className="max-w-xl"
-            {...(isTouch
-              ? mobileAnimationProps
-              : {
-                  initial: { opacity: 0, y: 30 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { duration: 0.8, delay: 0.4 },
-                })}
-          >
-            <h1 className="text-5xl md:text-6xl font-heavy font-futura-pt mb-4 md:mb-6 text-[#004422] leading-tight">
-              Conectemos y transformemos <br />
-              <span className="text-[#5C8A3F]">juntos</span>
-            </h1>
-            <p className="text-lg md:text-xl font-book font-futura-pt text-gray-700 leading-relaxed max-w-lg md:max-w-2xl">
-              Estoy aquí para escucharte y ayudarte a alcanzar tu máximo
-              potencial. Cada conversación es un paso hacia el cambio positivo.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Right Column (Image) */}
-        <div className="w-full md:w-1/2 lg:w-2/5 h-[65vh] sm:h-[75vh] md:h-full relative order-1 md:order-2">
-          <Image
-            src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746713527/foto_cata_mem5l8.jpg"
-            alt="Catalina Suárez - Contacto"
-            fill
-            className="object-cover object-center md:object-[center_top]"
-            quality={90}
-            priority
-          />
-        </div>
-
-        {/* Mobile Scroll Down Hint - Retained but might need style adjustments if it overlaps weirdly now */}
-        {isTouch && (
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 md:hidden flex flex-col items-center z-20 order-3"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
+    <>
+      <Head>
+        <title>Hablemos · Contacto con Cata Suárez Educación</title>
+        <meta
+          name="description"
+          content="¿Quieres más información? Comunícate con Cata Suárez y descubre cómo llevar la crianza y la educación positiva a tu familia o institución."
+        />
+        <meta
+          property="og:title"
+          content="Hablemos · Contacto con Cata Suárez Educación"
+        />
+        <meta
+          property="og:description"
+          content="¿Quieres más información? Comunícate con Cata Suárez y descubre cómo llevar la crianza y la educación positiva a tu familia o institución."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://catasuarezeducacion.com/contacto"
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
+        />
+      </Head>
+      <main className="min-h-screen bg-white">
+        {/* Hero Section - MODIFIED FOR TWO COLUMNS */}
+        <motion.section
+          className="relative min-h-screen md:h-screen flex flex-col md:flex-row overflow-hidden bg-[#F0F3EE]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4 }}
+        >
+          {/* Left Column (Text & Background) */}
+          <div className="w-full md:w-1/2 lg:w-3/5 bg-[#F0F3EE] p-8 sm:p-12 md:p-16 lg:p-24 flex flex-col justify-center order-2 md:order-1">
             <motion.div
-              className="w-6 h-10 border-2 border-gray-600/50 rounded-full flex justify-center p-2"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
+              className="max-w-xl"
+              {...(isTouch
+                ? mobileAnimationProps
+                : {
+                    initial: { opacity: 0, y: 30 },
+                    animate: { opacity: 1, y: 0 },
+                    transition: { duration: 0.8, delay: 0.4 },
+                  })}
+            >
+              <h1 className="text-5xl md:text-6xl font-heavy font-futura-pt mb-4 md:mb-6 text-[#004422] leading-tight">
+                Conectemos y transformemos <br />
+                <span className="text-[#5C8A3F]">juntos</span>
+              </h1>
+              <p className="text-lg md:text-xl font-book font-futura-pt text-gray-700 leading-relaxed max-w-lg md:max-w-2xl">
+                Estoy aquí para escucharte y ayudarte a alcanzar tu máximo
+                potencial. Cada conversación es un paso hacia el cambio
+                positivo.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right Column (Image) */}
+          <div className="w-full md:w-1/2 lg:w-2/5 h-[65vh] sm:h-[75vh] md:h-full relative order-1 md:order-2">
+            <Image
+              src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1746713527/foto_cata_mem5l8.jpg"
+              alt="Catalina Suárez - Contacto"
+              fill
+              className="object-cover object-center md:object-[center_top]"
+              quality={90}
+              priority
+            />
+          </div>
+
+          {/* Mobile Scroll Down Hint - Retained but might need style adjustments if it overlaps weirdly now */}
+          {isTouch && (
+            <motion.div
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 md:hidden flex flex-col items-center z-20 order-3"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.5 }}
             >
               <motion.div
-                className="w-1 h-2 bg-gray-700/80 rounded-full"
-                animate={{ y: [0, 4, 0] }}
+                className="w-6 h-10 border-2 border-gray-600/50 rounded-full flex justify-center p-2"
+                animate={{ y: [0, 10, 0] }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
-              />
+              >
+                <motion.div
+                  className="w-1 h-2 bg-gray-700/80 rounded-full"
+                  animate={{ y: [0, 4, 0] }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                />
+              </motion.div>
+              <motion.span
+                className="text-gray-600/80 text-xs md:text-sm mt-2 font-futura-pt font-book"
+                animate={{ opacity: [0.6, 1, 0.6] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              >
+                Desliza hacia abajo
+              </motion.span>
             </motion.div>
-            <motion.span
-              className="text-gray-600/80 text-xs md:text-sm mt-2 font-futura-pt font-book"
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-            >
-              Desliza hacia abajo
-            </motion.span>
-          </motion.div>
-        )}
-      </motion.section>
+          )}
+        </motion.section>
 
-      {/* Contact Form Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Contact Information */}
-              <div className="space-y-8 md:space-y-12">
+        {/* Contact Form Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                className="bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                {/* Contact Information */}
+                <div className="space-y-8 md:space-y-12">
+                  <div>
+                    <motion.h2
+                      className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#006838] mb-3 md:mb-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      Información de Contacto
+                    </motion.h2>
+                    <motion.p
+                      className="text-sm md:text-base text-gray-600 font-futura-pt font-book"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      Elige el medio que prefieras para conectar conmigo.
+                    </motion.p>
+                  </div>
+
+                  <div className="space-y-4 md:space-y-6">
+                    <ContactLink
+                      icon={FaMapMarkerAlt}
+                      href="https://maps.google.com/?q=Barranquilla,Colombia"
+                      label="Ubicación"
+                      text="Barranquilla, Colombia"
+                    />
+                    <ContactLink
+                      icon={HiMail}
+                      href="mailto:equipo@catasuarezeducacion.com"
+                      label="Email"
+                      text="equipo@catasuarezeducacion.com"
+                    />
+                    <ContactLink
+                      icon={FaWhatsapp}
+                      href="https://wa.me/573102122466"
+                      label="WhatsApp"
+                      text="+57 310 212 2466"
+                    />
+                  </div>
+
+                  <motion.div
+                    className="pt-6 md:pt-8 border-t border-gray-100"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <h3 className="text-base md:text-lg font-heavy font-futura-pt text-gray-800 mb-3 md:mb-4">
+                      Sígueme en redes sociales
+                    </h3>
+                    <div className="flex gap-3 md:gap-4">
+                      {[
+                        {
+                          icon: FaInstagram,
+                          href: "https://www.instagram.com/catasuarezeducacion",
+                          label: "Instagram",
+                        },
+                        {
+                          icon: FaFacebook,
+                          href: "https://www.facebook.com/share/ReZFk9ZBQrzSofF2/",
+                          label: "Facebook",
+                        },
+                        {
+                          icon: FaLinkedin,
+                          href: "https://www.linkedin.com/in/catalina-su%C3%A1rez-p%C3%A9rez-25337914a",
+                          label: "LinkedIn",
+                        },
+                        {
+                          icon: FaYoutube,
+                          href: "https://youtube.com/@catasuarez6063",
+                          label: "YouTube",
+                        },
+                      ].map((social, index) => (
+                        <motion.a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#006838]/5 flex items-center justify-center hover:bg-[#006838]/10 transition-all duration-300"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.1 * index }}
+                        >
+                          <social.icon className="text-base md:text-lg text-[#006838]" />
+                        </motion.a>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Contact Form */}
                 <div>
                   <motion.h2
-                    className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#006838] mb-3 md:mb-4"
+                    className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#006838] mb-6 md:mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                   >
-                    Información de Contacto
+                    Envíame un mensaje
                   </motion.h2>
-                  <motion.p
-                    className="text-sm md:text-base text-gray-600 font-futura-pt font-book"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    Elige el medio que prefieras para conectar conmigo.
-                  </motion.p>
-                </div>
 
-                <div className="space-y-4 md:space-y-6">
-                  <ContactLink
-                    icon={FaMapMarkerAlt}
-                    href="https://maps.google.com/?q=Barranquilla,Colombia"
-                    label="Ubicación"
-                    text="Barranquilla, Colombia"
-                  />
-                  <ContactLink
-                    icon={HiMail}
-                    href="mailto:equipo@catasuarezeducacion.com"
-                    label="Email"
-                    text="equipo@catasuarezeducacion.com"
-                  />
-                  <ContactLink
-                    icon={FaWhatsapp}
-                    href="https://wa.me/573102122466"
-                    label="WhatsApp"
-                    text="+57 310 212 2466"
-                  />
-                </div>
+                  <ContactForm />
 
-                <motion.div
-                  className="pt-6 md:pt-8 border-t border-gray-100"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  <h3 className="text-base md:text-lg font-heavy font-futura-pt text-gray-800 mb-3 md:mb-4">
-                    Sígueme en redes sociales
-                  </h3>
-                  <div className="flex gap-3 md:gap-4">
-                    {[
-                      {
-                        icon: FaInstagram,
-                        href: "https://www.instagram.com/catasuarezeducacion",
-                        label: "Instagram",
-                      },
-                      {
-                        icon: FaFacebook,
-                        href: "https://www.facebook.com/share/ReZFk9ZBQrzSofF2/",
-                        label: "Facebook",
-                      },
-                      {
-                        icon: FaLinkedin,
-                        href: "https://www.linkedin.com/in/catalina-su%C3%A1rez-p%C3%A9rez-25337914a",
-                        label: "LinkedIn",
-                      },
-                      {
-                        icon: FaYoutube,
-                        href: "https://youtube.com/@catasuarez6063",
-                        label: "YouTube",
-                      },
-                    ].map((social, index) => (
-                      <motion.a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#006838]/5 flex items-center justify-center hover:bg-[#006838]/10 transition-all duration-300"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 * index }}
-                      >
-                        <social.icon className="text-base md:text-lg text-[#006838]" />
-                      </motion.a>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Contact Form */}
-              <div>
-                <motion.h2
-                  className="text-2xl md:text-3xl font-heavy font-futura-pt text-[#006838] mb-6 md:mb-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  Envíame un mensaje
-                </motion.h2>
-
-                <ContactForm />
-
-                {/* <form
+                  {/* <form
                   onSubmit={handleSubmit}
                   className="space-y-1 md:space-y-2"
                 >
@@ -448,12 +479,13 @@ const Contacto = () => {
                     />
                   </motion.button>
                 </form> */}
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 };
 

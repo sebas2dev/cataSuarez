@@ -18,6 +18,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { FC } from "react";
+import Head from "next/head";
 
 interface AnimatedButtonProps {
   href: string;
@@ -578,331 +579,314 @@ const CasosDeExito = () => {
   }, [] as string[]); // Initialize accumulator as string[]
 
   return (
-    <motion.main
-      className="min-h-screen bg-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
-      {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Apply parallax only to background wrapper on touch */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            scale: isTouch ? mobileScale : undefined,
-          }}
-        >
-          {/* Keep existing desktop scale animation on inner div */}
+    <>
+      <Head>
+        <title>Impacto y Casos de Éxito · Cata Suárez Educación</title>
+        <meta
+          name="description"
+          content="Conoce los programas de Cata Suárez: Padres de Primera, Maestros para la Vida y más de una década transformando familias, docentes y comunidades."
+        />
+        <meta
+          property="og:title"
+          content="Impacto y Casos de Éxito · Cata Suárez Educación"
+        />
+        <meta
+          property="og:description"
+          content="Conoce los programas de Cata Suárez: Padres de Primera, Maestros para la Vida y más de una década transformando familias, docentes y comunidades."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://catasuarezeducacion.com/casos-de-exito"
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
+        />
+      </Head>
+      <motion.main
+        className="min-h-screen bg-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Hero Section */}
+        <section className="relative h-screen overflow-hidden">
+          {/* Apply parallax only to background wrapper on touch */}
           <motion.div
             className="absolute inset-0"
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              scale: isTouch ? mobileScale : undefined,
+            }}
           >
-            <Image
-              src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
-              alt="Casos de Éxito"
-              fill
-              className="object-cover object-[75%_40%] md:object-[center_15%]  "
-              quality={100}
-              priority
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
+            {/* Keep existing desktop scale animation on inner div */}
+            <motion.div
+              className="absolute inset-0"
+              initial={{ scale: 1.1, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Image
+                src="https://res.cloudinary.com/dqgqrvnnw/image/upload/v1754921395/Banner_c6lnhl.jpg"
+                alt="Casos de Éxito"
+                fill
+                className="object-cover object-[75%_40%] md:object-[center_15%]  "
+                quality={100}
+                priority
+              />
+              <div className="absolute inset-0 bg-black/30"></div>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        <div className="relative h-full flex flex-col justify-center">
-          {/* Adjusted padding for mobile */}
-          <div className="container mx-auto px-6 md:px-8 pt-16">
-            <div className="max-w-[800px]">
-              <motion.div
-                className="overflow-hidden mb-4 md:mb-8" // Adjusted margin
-                // Conditional Animation
-                {...(isTouch
-                  ? getMobileAnim(0)
-                  : {
-                      initial: { opacity: 0, y: 20 },
-                      animate: { opacity: 1, y: 0 },
-                      transition: { duration: 1.2, delay: 0.8 },
-                    })}
-              >
-                <p className="text-white/70 font-futura-pt font-book tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm">
-                  Casos de Éxito
-                </p>
-              </motion.div>
-
-              <div className="relative">
-                {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
+          <div className="relative h-full flex flex-col justify-center">
+            {/* Adjusted padding for mobile */}
+            <div className="container mx-auto px-6 md:px-8 pt-16">
+              <div className="max-w-[800px]">
                 <motion.div
-                  className="absolute -left-4 md:-left-8 -top-8 md:-top-10 hidden md:block" // Hidden on mobile
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1.4, delay: 1 }}
+                  className="overflow-hidden mb-4 md:mb-8" // Adjusted margin
+                  // Conditional Animation
+                  {...(isTouch
+                    ? getMobileAnim(0)
+                    : {
+                        initial: { opacity: 0, y: 20 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 1.2, delay: 0.8 },
+                      })}
                 >
-                  <span className="font-futura-pt font-thin text-[80px] md:text-[120px] leading-none text-white/20">
-                    &ldquo;
-                  </span>
+                  <p className="text-white/70 font-futura-pt font-book tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm">
+                    Casos de Éxito
+                  </p>
                 </motion.div>
 
-                {/* Adjusted padding for mobile */}
-                <div className="space-y-1 md:space-y-2 text-left relative z-10 pl-0 md:pl-4">
-                  {[
-                    "En la crianza",
-                    "no hay recetas;",
-                    "sí hay estrategias",
-                  ].map((text, index) => (
-                    <motion.div
-                      key={text}
-                      className="overflow-hidden"
-                      // Conditional Animation (staggered for mobile)
-                      {...(isTouch
-                        ? getMobileAnim(0.2 + index * 0.1)
-                        : {
-                            initial: { y: 80 },
-                            animate: { y: 0 },
-                            transition: {
-                              duration: 1.2,
-                              delay: 1.2 + index * 0.15,
-                              ease: [0.25, 1, 0.5, 1],
-                            },
-                          })}
-                    >
-                      <p
-                        // Responsive text size
-                        className={`text-4xl md:text-7xl font-futura-pt ${
-                          index === 2
-                            ? "font-heavy text-[#98b475]"
-                            : "font-light text-white/90"
-                        } leading-[1.1] md:leading-[1.2] tracking-tight`}
+                <div className="relative">
+                  {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
+                  <motion.div
+                    className="absolute -left-4 md:-left-8 -top-8 md:-top-10 hidden md:block" // Hidden on mobile
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.4, delay: 1 }}
+                  >
+                    <span className="font-futura-pt font-thin text-[80px] md:text-[120px] leading-none text-white/20">
+                      &ldquo;
+                    </span>
+                  </motion.div>
+
+                  {/* Adjusted padding for mobile */}
+                  <div className="space-y-1 md:space-y-2 text-left relative z-10 pl-0 md:pl-4">
+                    {[
+                      "En la crianza",
+                      "no hay recetas;",
+                      "sí hay estrategias",
+                    ].map((text, index) => (
+                      <motion.div
+                        key={text}
+                        className="overflow-hidden"
+                        // Conditional Animation (staggered for mobile)
+                        {...(isTouch
+                          ? getMobileAnim(0.2 + index * 0.1)
+                          : {
+                              initial: { y: 80 },
+                              animate: { y: 0 },
+                              transition: {
+                                duration: 1.2,
+                                delay: 1.2 + index * 0.15,
+                                ease: [0.25, 1, 0.5, 1],
+                              },
+                            })}
                       >
-                        {text}
-                      </p>
-                    </motion.div>
-                  ))}
+                        <p
+                          // Responsive text size
+                          className={`text-4xl md:text-7xl font-futura-pt ${
+                            index === 2
+                              ? "font-heavy text-[#98b475]"
+                              : "font-light text-white/90"
+                          } leading-[1.1] md:leading-[1.2] tracking-tight`}
+                        >
+                          {text}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
+                  <motion.div
+                    className="absolute right-0 md:-left-[-550px] -bottom-4 md:-bottom-6 hidden md:block" // Hidden on mobile
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.4, delay: 1.8 }}
+                  >
+                    <span className="font-futura-pt font-thin text-[80px] md:text-[120px] leading-none text-white/20">
+                      &rdquo;
+                    </span>
+                  </motion.div>
                 </div>
 
-                {/* Quote marks - keep desktop anims, maybe hide/simplify on mobile? Hiding for now */}
                 <motion.div
-                  className="absolute right-0 md:-left-[-550px] -bottom-4 md:-bottom-6 hidden md:block" // Hidden on mobile
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1.4, delay: 1.8 }}
+                  className="mt-8 md:mt-12 max-w-md md:max-w-xl" // Adjusted margin/max-width
+                  // Conditional Animation
+                  {...(isTouch
+                    ? getMobileAnim(0.5)
+                    : {
+                        initial: { opacity: 0, y: 40 },
+                        animate: { opacity: 1, y: 0 },
+                        transition: { duration: 1.4, delay: 2 },
+                      })}
                 >
-                  <span className="font-futura-pt font-thin text-[80px] md:text-[120px] leading-none text-white/20">
-                    &rdquo;
-                  </span>
+                  {/* Responsive text size */}
+                  <h1 className="text-2xl md:text-4xl font-heavy font-futura-pt text-white/90 leading-tight">
+                    Historias de
+                    <br />
+                    transformación real
+                  </h1>
                 </motion.div>
               </div>
-
-              <motion.div
-                className="mt-8 md:mt-12 max-w-md md:max-w-xl" // Adjusted margin/max-width
-                // Conditional Animation
-                {...(isTouch
-                  ? getMobileAnim(0.5)
-                  : {
-                      initial: { opacity: 0, y: 40 },
-                      animate: { opacity: 1, y: 0 },
-                      transition: { duration: 1.4, delay: 2 },
-                    })}
-              >
-                {/* Responsive text size */}
-                <h1 className="text-2xl md:text-4xl font-heavy font-futura-pt text-white/90 leading-tight">
-                  Historias de
-                  <br />
-                  transformación real
-                </h1>
-              </motion.div>
             </div>
           </div>
-        </div>
 
-        {/* Mobile Scroll Indicator */}
-        {isTouch && (
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.5 }} // Slightly later delay due to text anims
-          >
+          {/* Mobile Scroll Indicator */}
+          {isTouch && (
             <motion.div
-              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.5 }} // Slightly later delay due to text anims
             >
               <motion.div
-                className="w-1 h-2 bg-white/80 rounded-full"
-                animate={{ y: [0, 4, 0] }}
+                className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2"
+                animate={{ y: [0, 10, 0] }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
-              />
+              >
+                <motion.div
+                  className="w-1 h-2 bg-white/80 rounded-full"
+                  animate={{ y: [0, 4, 0] }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                />
+              </motion.div>
+              <motion.span
+                className="text-white/60 text-xs md:text-sm mt-2 font-futura-pt font-book"
+                animate={{ opacity: [0.6, 1, 0.6] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              >
+                Desliza hacia abajo
+              </motion.span>
             </motion.div>
-            <motion.span
-              className="text-white/60 text-xs md:text-sm mt-2 font-futura-pt font-book"
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-            >
-              Desliza hacia abajo
-            </motion.span>
-          </motion.div>
-        )}
-      </section>
-      <section className=" md:max-w-[900px] mx-auto">
-        <motion.h2
-          className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mt-16 text-center relative inline-block left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          Reconocimientos
-          <motion.div
-            className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-        </motion.h2>
-
-        <div className=" mx-center flex flex-col md:flex-row md:gap-4 justify-items-center items-center">
-          <div className="  md:w-[60%] mb-6 md:mb-0 ">
-            <MainQuote>
-              Obtuve un reconocimiento de MIT- HARVARD COLOMBIA por mi trabajo e
-              impacto social en la lucha contra el castigo físico y los malos
-              tratos en las familias.
-            </MainQuote>
-          </div>
-          <div className="flex flex-wrap gap-6 w-full md:w-[40%] p-4">
-            <Image
-              src={getCloudinaryUrl("Reconocimiento_Harvard_rl07pf")}
-              alt="Reconocimiento MIT-Harvard Colombia"
-              width={600}
-              height={600}
-              className="rounded-lg shadow-lg"
-            ></Image>
-            <Image
-              src={getCloudinaryUrl(
-                "Reconocimiento_Harvard_Cata_Suarez_xklgvs"
-              )}
-              width={600}
-              height={600}
-              alt="Reconocimiento MIT-Harvard Colombia Cata Suárez"
-              className="rounded-lg shadow-lg"
-            ></Image>
-          </div>
-        </div>
-      </section>
-
-      {/* Standalone Video Section */}
-      <section className="pt-12 md:py-16">
-        <motion.h2
-          className="text-2xl md:text-3xl max-w-[700px] font-heavy font-futura-pt text-[#006838] mb-12 text-center relative inline-block left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          DEL CASTIGO FÍSICO AL AMOR FAMILIAR: LA VERDADERA TRANSFORMACIÓN
-          SOCIAL
-          <motion.div
-            className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-        </motion.h2>
-        {videoProgram && videoProgram.videoId && (
-          <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-            {" "}
-            {/* Constrained width */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <VideoEmbed
-                videoId={videoProgram.videoId}
-                title={videoProgram.title}
-              />
-            </motion.div>
-          </div>
-        )}
-        <div className="flex justify-center mt-4 ">
-          <AnimatedButton
-            href="https://www.youtube.com/watch?v=ir2qe-cuo30&t=662s"
-            text=" Ver Documental Completo"
-          />
-        </div>
-      </section>
-
-      {/* Main Quote */}
-      <MainQuote>
-        Todos mis programas tienen más del 90% de satisfacción y muestran
-        impactos significativos en todas las evaluaciones que realizamos. El
-        reporte de la práctica del castigo físico lo hemos disminuido hasta en
-        un 30%”
-      </MainQuote>
-
-      {/* Grid Programs Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        {" "}
-        {/* Added light bg for contrast */}
-        <div className="container mx-auto px-4 md:px-8">
+          )}
+        </section>
+        <section className=" md:max-w-[900px] mx-auto">
           <motion.h2
-            className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] text-center mb-8 md:mb-12"
-            initial={{ opacity: 0, y: 40 }}
+            className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] mt-16 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Casos de Éxito Destacados
-          </motion.h2>
-          <motion.p
-            className=" text-center md:text-left text-gray-700 mb-4 md:mb-6 max-w-[900px] mx-auto text-base md:text-lg font-book font-futura-pt"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.8 }}
           >
-            Por más de una década me he enfocado en diseñar, liderar e
-            implementar programas masivos de educación positiva, parentalidad
-            positiva, competencias comportamentales docentes, habilidades
-            socioemocionales y muchos temas más. Algunos de mis programas más
-            representativos y de mayor impacto son:
-          </motion.p>
+            Reconocimientos
+            <motion.div
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.5 }}
+            />
+          </motion.h2>
 
-          {/* 2x2 Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
-            {programData.map((program, index) => (
-              <GridProgramCard
-                key={program.title || index} // Use title as key if available
-                logo={program.logo}
-                title={program.title}
-                description={program.description}
-                details={program.details}
-                socialLinks={program.socialLinks}
-                websiteUrl={program.websiteUrl}
-              />
-            ))}
+          <div className=" mx-center flex flex-col md:flex-row md:gap-4 justify-items-center items-center">
+            <div className="  md:w-[60%] mb-6 md:mb-0 ">
+              <MainQuote>
+                Obtuve un reconocimiento de MIT- HARVARD COLOMBIA por mi trabajo
+                e impacto social en la lucha contra el castigo físico y los
+                malos tratos en las familias.
+              </MainQuote>
+            </div>
+            <div className="flex flex-wrap gap-6 w-full md:w-[40%] p-4">
+              <Image
+                src={getCloudinaryUrl("Reconocimiento_Harvard_rl07pf")}
+                alt="Reconocimiento MIT-Harvard Colombia"
+                width={600}
+                height={600}
+                className="rounded-lg shadow-lg"
+              ></Image>
+              <Image
+                src={getCloudinaryUrl(
+                  "Reconocimiento_Harvard_Cata_Suarez_xklgvs"
+                )}
+                width={600}
+                height={600}
+                alt="Reconocimiento MIT-Harvard Colombia Cata Suárez"
+                className="rounded-lg shadow-lg"
+              ></Image>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* New Image Carousel Section */}
-      {allImageUrls.length > 0 && (
-        <section className="py-16 md:py-24 bg-white">
+        {/* Standalone Video Section */}
+        <section className="pt-12 md:py-16">
+          <motion.h2
+            className="text-2xl md:text-3xl max-w-[700px] font-heavy font-futura-pt text-[#006838] mb-12 text-center relative inline-block left-1/2 transform -translate-x-1/2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            DEL CASTIGO FÍSICO AL AMOR FAMILIAR: LA VERDADERA TRANSFORMACIÓN
+            SOCIAL
+            <motion.div
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-[#98B475] mx-auto w-1/3"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.5 }}
+            />
+          </motion.h2>
+          {videoProgram && videoProgram.videoId && (
+            <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+              {" "}
+              {/* Constrained width */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <VideoEmbed
+                  videoId={videoProgram.videoId}
+                  title={videoProgram.title}
+                />
+              </motion.div>
+            </div>
+          )}
+          <div className="flex justify-center mt-4 ">
+            <AnimatedButton
+              href="https://www.youtube.com/watch?v=ir2qe-cuo30&t=662s"
+              text=" Ver Documental Completo"
+            />
+          </div>
+        </section>
+
+        {/* Main Quote */}
+        <MainQuote>
+          Todos mis programas tienen más del 90% de satisfacción y muestran
+          impactos significativos en todas las evaluaciones que realizamos. El
+          reporte de la práctica del castigo físico lo hemos disminuido hasta en
+          un 30%”
+        </MainQuote>
+
+        {/* Grid Programs Section */}
+        <section className="py-12 md:py-16 bg-gray-50">
           {" "}
-          {/* Or another suitable background */}
+          {/* Added light bg for contrast */}
           <div className="container mx-auto px-4 md:px-8">
             <motion.h2
               className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] text-center mb-8 md:mb-12"
@@ -911,13 +895,60 @@ const CasosDeExito = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              Galería de Impacto
+              Casos de Éxito Destacados
             </motion.h2>
-            <ImageCarousel imageUrls={allImageUrls} />
+            <motion.p
+              className=" text-center md:text-left text-gray-700 mb-4 md:mb-6 max-w-[900px] mx-auto text-base md:text-lg font-book font-futura-pt"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            >
+              Por más de una década me he enfocado en diseñar, liderar e
+              implementar programas masivos de educación positiva, parentalidad
+              positiva, competencias comportamentales docentes, habilidades
+              socioemocionales y muchos temas más. Algunos de mis programas más
+              representativos y de mayor impacto son:
+            </motion.p>
+
+            {/* 2x2 Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+              {programData.map((program, index) => (
+                <GridProgramCard
+                  key={program.title || index} // Use title as key if available
+                  logo={program.logo}
+                  title={program.title}
+                  description={program.description}
+                  details={program.details}
+                  socialLinks={program.socialLinks}
+                  websiteUrl={program.websiteUrl}
+                />
+              ))}
+            </div>
           </div>
         </section>
-      )}
-    </motion.main>
+
+        {/* New Image Carousel Section */}
+        {allImageUrls.length > 0 && (
+          <section className="py-16 md:py-24 bg-white">
+            {" "}
+            {/* Or another suitable background */}
+            <div className="container mx-auto px-4 md:px-8">
+              <motion.h2
+                className="text-3xl md:text-4xl font-heavy font-futura-pt text-[#006838] text-center mb-8 md:mb-12"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Galería de Impacto
+              </motion.h2>
+              <ImageCarousel imageUrls={allImageUrls} />
+            </div>
+          </section>
+        )}
+      </motion.main>
+    </>
   );
 };
 
